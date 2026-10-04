@@ -96,3 +96,79 @@ At the moment, we are concentrating our efforts on two main areas: enhancing the
 * [Getting Started - Linguistics](https://github.com/kaisdukes/quranic-corpus/blob/main/docs/getting-started-linguistics.md)
 * [Getting Started - AI](https://github.com/kaisdukes/quranic-corpus/blob/main/docs/getting-started-ai.md)
 * [Getting Started - Tech](https://github.com/kaisdukes/quranic-corpus/blob/main/docs/getting-started-tech.md)
+
+## Contribution log: tabbed navigation and morphology 0.4 sync
+
+This section was written by Claude Code (Claude Sonnet 5.5) at the direction of the repository owner on 4 October 2026. It records exactly what that work changed, what it did not change, and how it was checked. It does not replace or edit anything in the project description above.
+
+### What is on this branch
+
+The branch has two commits on top of `main`:
+
+1. **Earlier work, committed as found.** The working tree already held a large set of uncommitted changes that were not made by this contribution (listed under "Earlier work" below). They are committed first, and on their own, so that the second commit contains only this contribution. Reading `git diff <first commit> <second commit>` shows this contribution and nothing else.
+2. **This contribution.** Everything listed under "What this contribution changed".
+
+For 21 files that both the earlier work and this contribution touched (or that this contribution deleted), the first commit holds the "before" form. I rebuilt those by reversing my own edits, or from the original text I had read before changing the file. Line-by-line attribution inside those 21 files is therefore best effort. The final content of the branch is checked to be identical to the working tree, apart from the files listed under "Not included".
+
+### Earlier work (first commit, not authored by this contribution)
+
+I did not write this work and did not review it beyond running the type-check, linter, unit tests and build over the whole tree. From the files it contains:
+
+* **Build tooling moved from Create React App to Vite.** `vite.config.ts`, `eslint.config.js`, a root `index.html`, `src/vite-env.d.ts`; changes to `package.json`, `package-lock.json`, `tsconfig.json` and `.gitignore`; the old `config/`, `scripts/build.js`, `scripts/start.js`, `scripts/test.js` and `src/react-app-env.d.ts` removed. Many components have small edits for newer React and TypeScript.
+* **Quran Dictionary (search by root).** `src/search/`, `scripts/root-index.mjs`, `scripts/LemmaText.java`.
+* **Treebank drafts shown where the verified treebank has none.** `src/corpus/syntax/draft-*`, `treebank-drafts.json`, `public/treebank-drafts/`, `scripts/treebank-drafts/`, `docs/treebank-drafts.md`.
+* **Project progress and annotation coverage.** `src/progress/`, `src/home/project-progress.*`, `src/components/progress-bar.*`, `scripts/annotation-coverage.mjs`, `scripts/corpus-data.mjs`.
+* **Unit tests** for dependency injection, markup parsing, locations, translations, progress, draft graphs and roots.
+
+### What this contribution changed
+
+**1. Part-of-speech tags synced with the morphology release 0.4.**
+I compared the 0.4 file (128,219 segment lines covering 77,429 words) with the morphology data the API serves (77,429 words). Both cover the same words, but the API data is newer: using the first stem of each word, 62 words differ in part-of-speech tag, 60 in lemma and 1 in root. These look like later corrections, so **the data was not overwritten and not changed**. The comparison was a throwaway script and is not part of the branch.
+The interface knew only 25 of the 45 tags used in 0.4, so the other 20 were drawn in the "unknown" colour. Changed:
+
+* `src/corpus/morphology/pos-tag.ts`: all 45 tags (added ACC, AMD, ANS, AVR, CAUS, CERT, EMPH, EQ, EXH, EXL, EXP, FUT, IMPN, IMPV, INC, INT, RES, RET, SUP, SUR) and a `posTags` list.
+* `src/theme/color-service.ts`: a colour for each new tag. These colours are my choice, grouped by function with the existing palette, not taken from the corpus.
+* `src/theme/color-service.test.ts`: a test that fails when a tag has no colour.
+
+**2. Licence terms of the corpus archive.**
+The 0.4 terms forbid changing the file, require the source to be named with a link to http://corpus.quran.com, and require the copyright notice in derived works.
+
+* `NOTICE`: the archive's copyright block, word for word (only line endings changed from CRLF to LF).
+* `src/components/footer.tsx`: a line crediting the Quranic Arabic Corpus (linked to http://corpus.quran.com) and Tanzil (http://tanzil.info). I added the Tanzil credit because the archive's second block asks for it.
+* `scripts/root-index.mjs` and `src/search/root-index.json`: the generator now copies `NOTICE` into a `copyright` field of the file. This is the only change to those two files.
+* `src/home/sources.tsx`: shows the notice in the page.
+* The archive itself is not part of this branch.
+
+**3. Navigation and layout.** Every page now sits inside one frame.
+
+* Header (`src/app/app-layout.tsx`, a layout route in `src/index.tsx`): the corpus name, a go-to box, and tabs for **Overview** (`/`), **Word by Word**, **Treebank** and **Dictionary** (`/roots`). The Word by Word and Treebank tabs open at the verse being read, so one verse can be viewed in both. When no verse is in the address, they use the last place read (kept in the browser's local storage as `lastLocation`), or chapter 1.
+* Go-to box (`src/navigation/quick-jump.tsx`, `chapter-search.ts`): accepts `2:255`, `2 255`, `2`, a chapter name or translation word, or a name with a verse (`baqarah 255`); lists up to 8 matches; arrow keys, Enter and Escape work; the `/` key focuses it; it opens the Treebank when you are on the Treebank and Word by Word otherwise. On phones it collapses to a search button.
+* Chapter toolbar (`src/navigation/context-bar.tsx`, `view-options.tsx`) on the Word by Word and Treebank pages: chapter and verse picker (current chapter highlighted), previous and next chapter, and the chapter's translation, place and verse count (hidden below 900 px). On Word by Word it also holds the Detail/Reader switch and a translations checklist. These replace the hamburger menu and use the same saved settings as before.
+* Overview page (`src/home/home.tsx`, `chapter-index.tsx`, `sources.tsx`, `src/components/tabs.tsx`): the introduction text is unchanged; three entry cards ("Continue at …" shows the last place read); then three tabs. **Chapters** is a sortable, filterable table (number, chapter, verses, words, treebank share, with drafts shown as "Draft"). **Project progress** is the existing component, unchanged. **Sources** has the source links and the copyright notice. The selected tab is kept in the address (`/?tab=sources`).
+* Look: colours and a serif heading font are set as CSS variables in `src/theme/styles.scss`; the header height variable in `src/theme/theme.ts` went from 50 px to 88 px, plus a 44 px toolbar variable; visible keyboard focus; `Dropdown` (`src/components/dropdown.tsx`) uses real buttons with Escape and outside-click handling.
+* Smaller changes: the Word by Word scroll offset now measures the header (it was fixed at 50 px); unknown addresses show the error page inside the frame; the Dictionary page lost its own "The Quranic Arabic Corpus" link because the header has one; the logo mark in the header is the dark version.
+* Behaviour that was removed: the old home page's buttons linked to a random chapter or verse, and its large calligraphy logo and card list ("Show all chapters") are gone.
+
+**4. Removed files** (superseded by the above): `src/navigation/navigation-bar.*`, `src/navigation/hamburger-menu.*`, `src/components/popup-link.tsx`, `src/components/popup-menu.*`, the icons `hamburger.svg`, `read.svg`, `tick.svg`, and `qaf-white.svg`.
+
+**5. Tests and documentation.** `src/navigation/navigation.test.ts` (10 tests for the jump-box parsing and the tab targets) and `src/theme/color-service.test.ts` (2 tests). A "Site Structure" section in `docs/getting-started-tech.md`.
+
+### What this contribution did not change
+
+The morphology data and the API; the syntax graphs and treebank page logic; the word morphology view; the Dictionary's search and data logic; how translations and settings are stored. The treebank page, `syntax-service.ts` and `word-morphology` files are untouched. In `word-by-word.tsx` only the scroll offset and the toolbar option changed.
+
+### How it was checked
+
+* `npx tsc --noEmit` clean; `npx eslint .` 0 errors and 9 warnings (all `react-hooks/exhaustive-deps`, in code that predates this contribution); `npx vitest run` 100 tests passing (12 of them added here); `npx vite build` succeeds.
+* By hand in a headless Chromium against the local API, at a 1360 × 860 window and a 390 px wide phone window: tab switching keeps the verse, the go-to box (typing, keyboard, `/`), the chapter picker, the Detail/Reader switch, the translations checklist with Escape, the Overview tabs and table sorting, the sticky table header, and that the page does not scroll sideways on the phone window.
+* Not tested: Firefox, Safari, a screen reader, a real phone. There are no component tests for `Tabs`, `Dropdown` or the go-to box, because the project has no DOM test environment; only their logic is unit tested.
+
+### Known limitations
+
+* On very narrow screens the chapter number in the toolbar is hidden and long chapter names are shortened with an ellipsis.
+* The header content is left-aligned at full width while the Overview content is centred at a maximum of 1100 px.
+* Once, the Vite development server served an empty stylesheet for `src/home/project-progress.scss`. Touching the file fixed it, and the production build was not affected.
+
+### Not included
+
+`jqurantree-1.0.0-src.zip` and the morphology archive `quranic-corpus-morphology-0.4.zip` are not committed. Ignored local files (`.env.local`, `api.local/`, `build/`, `node_modules/`) are not committed.

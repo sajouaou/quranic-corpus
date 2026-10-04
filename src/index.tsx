@@ -14,33 +14,48 @@ import { Home } from './home/home';
 import { WordByWord, wordByWordLoader } from './word-by-word/word-by-word';
 import { Treebank, treebankLoader } from './treebank/treebank';
 import { RootSearch, rootSearchLoader } from './search/root-search';
+import { AppLayout } from './app/app-layout';
 import { ErrorPage } from './errors/error-page';
+import { CorpusError } from './errors/corpus-error';
 import { container } from 'tsyringe';
 import './theme/styles.scss';
 
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <Home />,
-        errorElement: <ErrorPage />
-    },
-    {
-        path: '/treebank/:location',
-        loader: treebankLoader,
-        element: <Treebank />,
-        errorElement: <ErrorPage />
-    },
-    {
-        path: '/wordbyword/:location',
-        loader: wordByWordLoader,
-        element: <WordByWord />,
-        errorElement: <ErrorPage />
-    },
-    {
-        path: '/roots/:root?',
-        loader: rootSearchLoader,
-        element: <RootSearch />,
-        errorElement: <ErrorPage />
+        element: <AppLayout />,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path: '/treebank/:location',
+                loader: treebankLoader,
+                element: <Treebank />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path: '/wordbyword/:location',
+                loader: wordByWordLoader,
+                element: <WordByWord />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path: '/roots/:root?',
+                loader: rootSearchLoader,
+                element: <RootSearch />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path: '*',
+                loader: () => {
+                    throw new CorpusError('404', 'Page not found');
+                },
+                errorElement: <ErrorPage />
+            }
+        ]
     }
 ]);
 

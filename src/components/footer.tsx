@@ -16,6 +16,9 @@ export const Footer = ({ type }: Props) => {
             <div>
                 The Quranic Arabic Corpus is <a href='https://github.com/kaisdukes/quranic-corpus/blob/main/LICENSE'>open source</a>.
             </div>
+            <div>
+                Morphological annotation: <a href='http://corpus.quran.com'>Quranic Arabic Corpus</a> (GNU General Public License). Quran text: <a href='http://tanzil.info'>Tanzil</a>.
+            </div>
         </footer>
     )
 }

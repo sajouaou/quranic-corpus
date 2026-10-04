@@ -2,132 +2,185 @@
     .heading {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-        margin-bottom: 15px;
-
-        h2 {
-            margin: 0;
-        }
+        justify-content: flex-end;
+        margin-bottom: 8px;
 
         input {
-            width: 220px;
+            box-sizing: border-box;
+            width: 260px;
             max-width: 55%;
-            padding: 9px 12px;
-            border: 1px solid #d5dae0;
-            border-radius: 8px;
+            height: 34px;
+            padding: 0 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--surface-alt);
+            color: var(--ink);
             font: inherit;
+            font-size: 14px;
 
             &:focus {
-                outline: 2px solid #4886d0;
-                outline-offset: 1px;
+                border-color: var(--accent);
+                background: var(--surface);
+                outline: none;
+                box-shadow: 0 0 0 3px var(--accent-soft);
             }
         }
     }
 
-    ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
-        gap: 10px;
-        margin: 0;
+    .hint,
+    .note {
+        margin: 0 0 12px 0;
+        color: var(--ink-muted);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .note {
+        margin: 12px 0 0 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-variant-numeric: tabular-nums;
+    }
+
+    th,
+    td {
+        padding: 9px 12px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: baseline;
+
+        &.numeric {
+            text-align: right;
+        }
+    }
+
+    thead th {
+        position: sticky;
+        top: var(--app-header-height);
+        z-index: 1;
         padding: 0;
-        list-style: none;
-    }
+        border-bottom: 1px solid var(--border-strong);
+        background: var(--surface-alt);
 
-    li {
-        display: flex;
-        align-items: stretch;
-        border: 1px solid #e5e5e5;
-        border-radius: 10px;
-        transition: border-color 300ms;
-
-        &:hover {
-            border-color: #a9a9a9;
-        }
-    }
-
-    .chapter,
-    .chapter:visited {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        gap: 12px;
-        min-width: 0;
-        padding: 10px 12px;
-        color: black;
-
-        .number {
-            flex-shrink: 0;
-            width: 34px;
-            text-align: center;
+        button {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            padding: 9px 12px;
+            border: 0;
+            background: transparent;
+            color: var(--ink-muted);
+            font: inherit;
+            font-size: 12px;
             font-weight: bold;
-            color: rgb(63, 132, 161);
-            font-variant-numeric: tabular-nums;
-        }
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
 
-        .name {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            min-width: 0;
-
-            .phonetic {
-                font-weight: bold;
-            }
-
-            .translation {
-                font-size: 90%;
-                color: #575757;
+            &:hover {
+                color: var(--ink);
             }
         }
 
-        .verses {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            flex-shrink: 0;
-            gap: 3px;
-            font-size: 80%;
-            color: #575757;
+        &.numeric button {
+            justify-content: flex-end;
+        }
 
-            img {
-                height: 18px;
-            }
+        &[aria-sort='ascending'] button,
+        &[aria-sort='descending'] button {
+            color: var(--ink);
+        }
+
+        .arrow {
+            display: inline-block;
+            width: 10px;
         }
     }
 
-    .treebank-link {
-        display: flex;
-        align-items: center;
-        padding: 0 12px;
-        border-left: 1px solid #e5e5e5;
-        font-size: 90%;
+    tbody tr:hover {
+        background: var(--surface-alt);
+    }
 
-        &.draft,
-        &.draft:visited {
-            color: #b85708;
+    td:first-child {
+        width: 56px;
+        color: var(--ink-muted);
+    }
+
+    .name,
+    .name:visited {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .detail {
+        color: var(--ink-muted);
+        font-size: 14px;
+
+        .separator {
+            margin: 0 6px;
         }
+    }
+
+    .draft,
+    .draft:visited {
+        color: var(--draft);
+    }
+
+    .none {
+        color: var(--border-strong);
     }
 
     .empty {
-        margin: 0;
-        color: #575757;
+        margin: 12px 0 0 0;
+        color: var(--ink-muted);
     }
 
-    .toggle {
-        display: block;
-        margin: 15px auto 0 auto;
-        padding: 10px 18px;
-        border: 1px solid #e5e5e5;
-        border-radius: 25px;
-        background: white;
-        color: #4886d0;
-        font: inherit;
-        cursor: pointer;
-        transition: border-color 300ms;
+    @media only screen and (max-width: 599px) {
+        table {
+            table-layout: fixed;
+        }
 
-        &:hover {
-            border-color: #a9a9a9;
+        // The number, verse count and treebank columns have fixed widths. The chapter takes the rest.
+        th:nth-child(1) {
+            width: 44px;
+        }
+
+        th:nth-child(3) {
+            width: 62px;
+        }
+
+        th:nth-child(5) {
+            width: 82px;
+        }
+
+        .optional {
+            display: none;
+        }
+
+        thead th button {
+            letter-spacing: 0.02em;
+        }
+
+        th,
+        td {
+            padding: 9px 6px;
+        }
+
+        thead th button {
+            padding: 9px 6px;
+        }
+
+        .detail {
+            display: block;
+        }
+
+        .heading input {
+            width: 180px;
         }
     }
 }

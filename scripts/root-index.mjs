@@ -11,8 +11,11 @@
 //
 // The API jar provides the corpus's own conversion of lemmas to Arabic script and to phonetic
 // transcription (see LemmaText.java), so that both match the rest of the site.
+//
+// The roots come from the Quranic Arabic Corpus morphology, so the output reproduces the copyright
+// notice in the NOTICE file, as the terms of use of the corpus require.
 import { execFileSync } from 'node:child_process';
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getApiPath, getSource, readLines, readMorphology, readVerses } from './corpus-data.mjs';
@@ -174,8 +177,10 @@ const sortForms = forms => [...forms.values()].sort((a, b) =>
     || compareLemmas(a.lemma, b.lemma));
 
 const sortedRoots = [...roots.keys()].sort();
+const notice = readFileSync(join(projectPath, 'NOTICE'), 'utf8').trimEnd().split('\n');
 const json = '{\n'
     + Object.entries(getSource(apiPath)).map(([key, value]) => `  ${JSON.stringify(key)}: ${JSON.stringify(value)},\n`).join('')
+    + `  "copyright": [\n${notice.map(line => `    ${JSON.stringify(line)}`).join(',\n')}\n  ],\n`
     + '  "roots": {\n'
     + sortedRoots.map(root =>
         `    ${JSON.stringify(root)}: [\n${sortForms(roots.get(root)).map(form => `      ${formatForm(form)}`).join(',\n')}\n    ]`).join(',\n')

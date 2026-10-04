@@ -1,0 +1,113 @@
+.context-bar {
+    position: sticky;
+    top: var(--app-header-height);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-sizing: border-box;
+    height: var(--context-bar-height);
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-alt);
+
+    .location {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .chapter {
+        min-width: 0;
+
+        .label {
+            min-width: 5ch;
+        }
+
+        .trigger {
+            font-weight: bold;
+        }
+
+        .number {
+            margin-right: 8px;
+            color: var(--accent-strong);
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    .steps {
+        display: flex;
+        flex-shrink: 0;
+        gap: 2px;
+    }
+
+    .step,
+    .step:visited {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        color: var(--ink);
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        &:hover {
+            background: var(--surface-hover);
+        }
+
+        &.disabled {
+            color: var(--border-strong);
+            pointer-events: none;
+        }
+    }
+
+    .facts {
+        overflow: hidden;
+        color: var(--ink-muted);
+        font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        .separator {
+            margin: 0 6px;
+        }
+    }
+
+    @media only screen and (max-width: 899px) {
+        .facts {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 599px) {
+        padding: 0 6px;
+        gap: 4px;
+
+        .location {
+            gap: 2px;
+        }
+
+        .step,
+        .step:visited {
+            width: 26px;
+        }
+    }
+
+    @media only screen and (max-width: 430px) {
+        .chapter .number {
+            display: none;
+        }
+    }
+}

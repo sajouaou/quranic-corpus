@@ -1,0 +1,173 @@
+.quick-jump {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+
+        &:hover {
+            background: var(--surface-alt);
+        }
+
+        svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+    }
+
+    .field {
+        position: relative;
+        width: 320px;
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            height: 34px;
+            padding: 0 34px 0 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--surface-alt);
+            color: var(--ink);
+            font: inherit;
+            font-size: 14px;
+            transition: border-color 150ms, background 150ms;
+
+            &::placeholder {
+                color: var(--ink-muted);
+            }
+
+            &:hover {
+                border-color: var(--border-strong);
+            }
+
+            &:focus {
+                border-color: var(--accent);
+                background: var(--surface);
+                outline: none;
+                box-shadow: 0 0 0 3px var(--accent-soft);
+            }
+        }
+
+        kbd {
+            position: absolute;
+            top: 50%;
+            right: 9px;
+            transform: translateY(-50%);
+            min-width: 18px;
+            padding: 1px 0;
+            border: 1px solid var(--border-strong);
+            border-radius: 4px;
+            color: var(--ink-muted);
+            font: inherit;
+            font-size: 12px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        input:focus+kbd {
+            display: none;
+        }
+
+        ul {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            z-index: 40;
+            margin: 0;
+            padding: 4px;
+            border: 1px solid var(--border-strong);
+            border-radius: 8px;
+            background: var(--surface);
+            box-shadow: 0 8px 24px -8px rgba(28, 37, 48, 0.35);
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+
+            .title {
+                font-weight: bold;
+                font-variant-numeric: tabular-nums;
+                white-space: nowrap;
+            }
+
+            .detail {
+                min-width: 0;
+                overflow: hidden;
+                color: var(--ink-muted);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            &.active {
+                background: var(--accent-soft);
+            }
+
+            &.empty {
+                color: var(--ink-muted);
+                cursor: default;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 599px) {
+        .toggle {
+            display: flex;
+        }
+
+        .field {
+            display: none;
+            position: fixed;
+            top: 48px;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            width: auto;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+
+            input {
+                height: 40px;
+                font-size: 16px;
+            }
+
+            kbd {
+                display: none;
+            }
+
+            ul {
+                top: calc(100% - 2px);
+                left: 12px;
+                right: 12px;
+            }
+        }
+
+        &.expanded .field {
+            display: block;
+        }
+    }
+}

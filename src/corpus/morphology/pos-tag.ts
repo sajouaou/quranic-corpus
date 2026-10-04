@@ -1,26 +1,49 @@
-export type PosTag =
-    'ADJ' |
-    'CIRC' |
-    'COM' |
-    'COND' |
-    'CONJ' |
-    'DEM' |
-    'DET' |
-    'INL' |
-    'INTG' |
-    'LOC' |
-    'N' |
-    'NEG' |
-    'PN' |
-    'P' |
-    'PREV' |
-    'PRON' |
-    'PRP' |
-    'PRO' |
-    'REL' |
-    'REM' |
-    'RSLT' |
-    'SUB' |
-    'T' |
-    'V' |
-    'VOC';
+export const posTags = [
+    'ACC',
+    'ADJ',
+    'AMD',
+    'ANS',
+    'AVR',
+    'CAUS',
+    'CERT',
+    'CIRC',
+    'COM',
+    'COND',
+    'CONJ',
+    'DEM',
+    'DET',
+    'EMPH',
+    'EQ',
+    'EXH',
+    'EXL',
+    'EXP',
+    'FUT',
+    'IMPN',
+    'IMPV',
+    'INC',
+    'INL',
+    'INT',
+    'INTG',
+    'LOC',
+    'N',
+    'NEG',
+    'PN',
+    'P',
+    'PREV',
+    'PRON',
+    'PRP',
+    'PRO',
+    'REL',
+    'REM',
+    'RES',
+    'RET',
+    'RSLT',
+    'SUB',
+    'SUP',
+    'SUR',
+    'T',
+    'V',
+    'VOC'
+] as const;
+
+export type PosTag = typeof posTags[number];

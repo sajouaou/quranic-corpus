@@ -16,6 +16,7 @@ import { CorpusError } from '../errors/corpus-error';
 import { LoadingBanner } from '../components/loading-banner';
 import { WordMorphologyView } from '../word-morphology/word-morphology-view';
 import { getVerseId } from './verse-id';
+import { getStickyHeight } from '../navigation/navigation';
 import { useProgress } from '../app/progress-context';
 import { container } from 'tsyringe';
 import './word-by-word.scss';
@@ -145,7 +146,7 @@ export const WordByWord = () => {
             const bodyTop = document.body.getBoundingClientRect().top;
             const elementTop = targetElement.getBoundingClientRect().top;
             window.scrollTo({
-                top: elementTop - bodyTop - 50,
+                top: elementTop - bodyTop - getStickyHeight(),
                 behavior: 'smooth'
             });
         }
@@ -232,7 +233,7 @@ export const WordByWord = () => {
 
     return (
         <Workspace
-            navigation={{ chapterNumber }}
+            navigation={{ chapterNumber, showViewOptions: true }}
             focusMode={true}
             info={wordMorphology && <WordMorphologyView wordMorphology={wordMorphology} />}>
             <div className='word-by-word'>

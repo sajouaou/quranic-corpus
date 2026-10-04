@@ -84,7 +84,6 @@ export const RootSearch = () => {
     return (
         <div className='root-search'>
             <header>
-                <Link to='/'>The Quranic Arabic Corpus</Link>
                 <h1>Quran Dictionary</h1>
                 <p>
                     Choose the first letter of a root, or type a root in Arabic letters or as letter

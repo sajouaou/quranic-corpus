@@ -1,10 +1,10 @@
 import './qaf.scss';
-import qaf from '../images/qaf-white.svg';
+import qaf from '../images/qaf.svg';
 
 export const Qaf = () => {
     return (
         <div className='qaf'>
-            <img src={qaf} alt='The Quranic Arabic Corpus' />
+            <img src={qaf} alt='' />
         </div>
     )
 }

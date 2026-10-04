@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
-import { NavigationBar } from '../navigation/navigation-bar';
+import { ContextBar } from '../navigation/context-bar';
 import { NavigationProps } from '../navigation/navigation';
 import { Footer } from '../components/footer';
 import { combineClassNames } from '../theme/class-names';
@@ -73,7 +73,7 @@ export const Workspace = ({ className, navigation, focusMode, children, info }: 
 
     return (
         <>
-            <NavigationBar {...navigation} />
+            <ContextBar {...navigation} />
             <div
                 ref={workspaceRef}
                 className='workspace'

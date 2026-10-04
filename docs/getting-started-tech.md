@@ -63,6 +63,14 @@ node scripts/root-index.mjs <path to a quranic-corpus-api checkout> <path to the
 
 For verses that the verified treebank does not cover, the site shows parser-generated drafts labelled as AI-generated. See [Treebank Drafts](treebank-drafts.md) for how they were produced, how accurate the parser measured, and what to read before publishing them.
 
+### Site Structure
+
+Every page is rendered inside `AppLayout` (`src/app/app-layout.tsx`), a layout route in `src/index.tsx`. It provides the header with the main sections as tabs, and a box for jumping to a verse or chapter (press `/` to focus it). Pages that show a chapter use `Workspace`, which adds a toolbar below the header for choosing the chapter and the display options.
+
+* The sections and which place each tab opens at are in `src/navigation/sections.ts`. The Word by Word and Treebank tabs open at the verse being read.
+* The parsing and matching behind the jump box is in `src/navigation/chapter-search.ts`. It has unit tests, like the rest of the navigation logic.
+* The overview page (`src/home`) uses the `Tabs` component. The selected tab is kept in the URL, as in `/?tab=sources`.
+
 For background reading to help you fix the bug, consider Googling these topics:
 
 * React Intersection Observer API

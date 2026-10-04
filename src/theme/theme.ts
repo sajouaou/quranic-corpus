@@ -5,6 +5,7 @@ interface ITheme {
         [key: string]: Font
     },
     appHeaderHeight: string,
+    contextBarHeight: string,
     arabicFontSizeSmall: string,
     arabicFontSizeMedium: string,
     arabicFontSizeLarge: string,
@@ -24,7 +25,8 @@ export const theme: ITheme = {
         verseEndFont: { family: 'Uthmani Hafs' },
         elidedWordFont: { family: 'Times New Roman' },
     },
-    appHeaderHeight: '50px',
+    appHeaderHeight: '88px',
+    contextBarHeight: '44px',
     arabicFontSizeSmall: '30px',
     arabicFontSizeMedium: '40px',
     arabicFontSizeLarge: '50px',

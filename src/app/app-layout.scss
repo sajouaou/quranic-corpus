@@ -1,0 +1,57 @@
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: var(--app-header-height);
+    background: var(--surface);
+
+    .app-bar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        box-sizing: border-box;
+        height: 48px;
+        padding: 0 16px;
+
+        .brand,
+        .brand:visited {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            color: var(--ink);
+
+            .name {
+                font-family: var(--heading-font-family);
+                font-size: 19px;
+                font-weight: 600;
+                letter-spacing: 0.01em;
+            }
+        }
+
+        .qaf {
+            padding: 0 10px 0 0;
+
+            img {
+                height: 26px;
+            }
+        }
+    }
+
+    .progress {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    @media only screen and (max-width: 599px) {
+        .app-bar {
+            gap: 8px;
+            padding: 0 4px 0 12px;
+
+            .brand .name {
+                font-size: 17px;
+            }
+        }
+    }
+}
