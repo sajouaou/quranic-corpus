@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { MarkupParser } from '../corpus/nlg/markup-parser';
 import './markup-view.scss';
 
@@ -21,9 +21,9 @@ export const MarkupView = ({ markup }: Props) => {
                         case 'phonetic':
                             return <em key={index} className='markup'>{span.text}</em>;
                         case 'arabic':
-                            return <>{'('}<span key={index} className='markup'>{span.text}</span>{')'}</>;
+                            return <Fragment key={index}>{'('}<span className='markup'>{span.text}</span>{')'}</Fragment>;
                         default:
-                            return <>{span.text}</>;
+                            return <Fragment key={index}>{span.text}</Fragment>;
                     }
                 })
             }

@@ -4,3 +4,6 @@
 # node.js
 /node_modules
 /build
+
+# local environment
+*.local

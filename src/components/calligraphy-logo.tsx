@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../images/logo.svg';
+import Logo from '../images/logo.svg?react';
 import './calligraphy-logo.scss';
 
 export const CalligraphyLogo = () => {

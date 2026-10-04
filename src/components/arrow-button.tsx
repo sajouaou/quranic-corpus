@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { combineClassNames } from '../theme/class-names';
 import './arrow-button.scss';
 

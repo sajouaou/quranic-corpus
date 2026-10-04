@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
+import { LoaderFunctionArgs, useLoaderData } from 'react-router';
 import { Workspace } from '../app/workspace';
 import { GraphLocation } from '../corpus/syntax/graph-location';
 import { formatLocation, parseLocation } from '../corpus/orthography/location';
@@ -43,9 +43,9 @@ export const Treebank = () => {
         (async () => {
             showProgress(true);
             try {
-                var syntaxGraph = await syntaxService.getSyntax(graphLocation);
-                var tokenRange = syntaxGraph.getTokenRange();
-                var irab = tokenRange ? await irabService.getIrab(tokenRange.from, tokenRange.to) : null;
+                const syntaxGraph = await syntaxService.getSyntax(graphLocation);
+                const tokenRange = syntaxGraph.getTokenRange();
+                const irab = tokenRange ? await irabService.getIrab(tokenRange.from, tokenRange.to) : null;
 
                 setSyntaxGraph(syntaxGraph);
                 setIrab(irab);
@@ -84,6 +84,14 @@ export const Treebank = () => {
             {
                 syntaxGraph &&
                 <>
+                    {
+                        syntaxGraph.draft &&
+                        <p className='draft-notice' role='note'>
+                            <strong>AI-generated draft, not reviewed.</strong> This diagram was produced
+                            automatically by a parser trained on the verified part of the Quranic Treebank.
+                            It has not been checked by a linguist and is likely to contain errors.
+                        </p>
+                    }
                     <nav className='navigation'>
                         <div className='location'>
                             <div>Verse {verseNumber}</div>
@@ -99,7 +107,7 @@ export const Treebank = () => {
                     <SyntaxGraphView syntaxGraph={syntaxGraph} />
                     {
                         syntaxGraph.legacyCorpusGraphNumber > 0 &&
-                        <img className='legacy-graph' src={`https://corpus.quran.com/graphimage?id=${syntaxGraph.legacyCorpusGraphNumber}`} />
+                        <img className='legacy-graph' src={`https://corpus.quran.com/graphimage?id=${syntaxGraph.legacyCorpusGraphNumber}`} alt='Bitmap-rendered dependency graph' />
                     }
                 </>
             }

@@ -1,5 +1,4 @@
-import { Link, useRouteError } from 'react-router-dom';
-import { ErrorResponse } from '@remix-run/router';
+import { Link, isRouteErrorResponse, useRouteError } from 'react-router';
 import { CalligraphyLogo } from '../components/calligraphy-logo';
 import { CorpusError, ErrorCode } from './corpus-error';
 import { Footer } from '../components/footer';
@@ -10,7 +9,7 @@ const errorCodeDescriptionMap = new Map<ErrorCode, string>([
 ]);
 
 export const ErrorPage = () => {
-    let e = useRouteError();
+    const e = useRouteError();
     console.error(e);
 
     let message = e instanceof Error ? (e as Error).message : 'Something went wrong!';
@@ -19,7 +18,7 @@ export const ErrorPage = () => {
     if (e instanceof CorpusError) {
         description = errorCodeDescriptionMap.get(e.code);
 
-    } else if (e instanceof ErrorResponse) {
+    } else if (isRouteErrorResponse(e)) {
         message = e.statusText;
         description = e.data;
 

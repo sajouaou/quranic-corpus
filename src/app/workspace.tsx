@@ -54,8 +54,9 @@ export const Workspace = ({ className, navigation, focusMode, children, info }: 
             e.preventDefault();
         };
 
-        if (splitterRef.current) {
-            splitterRef.current.addEventListener('mousedown', handleMouseDown);
+        const splitter = splitterRef.current;
+        if (splitter) {
+            splitter.addEventListener('mousedown', handleMouseDown);
         }
 
         document.addEventListener('mousemove', handleMouseMove);
@@ -64,8 +65,8 @@ export const Workspace = ({ className, navigation, focusMode, children, info }: 
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseup', handleMouseUp);
-            if (splitterRef.current) {
-                splitterRef.current.removeEventListener('mousedown', handleMouseDown);
+            if (splitter) {
+                splitter.removeEventListener('mousedown', handleMouseDown);
             }
         };
     }, [isDragging, workspaceRef, splitterRef]);

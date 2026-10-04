@@ -12,7 +12,8 @@ export type Graph = {
     next?: GraphLocation,
     words: Word[],
     edges: Edge[],
-    phraseNodes?: PhraseNode[]
+    phraseNodes?: PhraseNode[],
+    draft?: boolean
 }
 
 export class SyntaxGraph {
@@ -24,9 +25,10 @@ export class SyntaxGraph {
     readonly words: Word[];
     readonly edges?: Edge[];
     readonly phraseNodes?: PhraseNode[];
+    readonly draft: boolean;
 
     constructor(
-        { graphNumber, graphCount, legacyCorpusGraphNumber, prev, next, words, edges, phraseNodes }: Graph,
+        { graphNumber, graphCount, legacyCorpusGraphNumber, prev, next, words, edges, phraseNodes, draft }: Graph,
         readonly edgeLabels: string[],
         readonly segmentNodeCount: number) {
 
@@ -38,6 +40,7 @@ export class SyntaxGraph {
         this.words = words;
         this.edges = edges;
         this.phraseNodes = phraseNodes;
+        this.draft = draft === true;
     }
 
     brackets(word: Word) {

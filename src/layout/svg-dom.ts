@@ -1,17 +1,17 @@
 import { RefObject } from 'react';
 
 export type SVGWordElement = {
-    locationRef: RefObject<SVGTextElement>,
-    phoneticRef: RefObject<SVGTextElement>,
-    translationRef: RefObject<SVGTextElement>,
-    braRef?: RefObject<SVGTextElement>,
-    tokenRef: RefObject<SVGTextElement>,
-    ketRef?: RefObject<SVGTextElement>,
-    posTagRefs: RefObject<SVGTextElement>[]
+    locationRef: RefObject<SVGTextElement | null>,
+    phoneticRef: RefObject<SVGTextElement | null>,
+    translationRef: RefObject<SVGTextElement | null>,
+    braRef?: RefObject<SVGTextElement | null>,
+    tokenRef: RefObject<SVGTextElement | null>,
+    ketRef?: RefObject<SVGTextElement | null>,
+    posTagRefs: RefObject<SVGTextElement | null>[]
 }
 
 export type SVGDom = {
     wordElements: SVGWordElement[],
-    phraseTagRefs: RefObject<SVGTextElement>[],
-    dependencyTagRefs: RefObject<SVGTextElement>[]
+    phraseTagRefs: RefObject<SVGTextElement | null>[],
+    dependencyTagRefs: RefObject<SVGTextElement | null>[]
 }

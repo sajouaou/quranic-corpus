@@ -14,7 +14,7 @@ export const ChapterHeader = ({ chapter }: Props) => {
         <header className='chapter-header'>
             <div className='grid'>
                 <div className='city'>
-                    <img src={chapter.city === 'Makkah' ? makkah : madinah} />
+                    <img src={chapter.city === 'Makkah' ? makkah : madinah} alt={chapter.city} />
                 </div>
                 <div className='title'>
                     Sūrat {phonetic}

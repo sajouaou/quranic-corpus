@@ -1,7 +1,7 @@
 import { Token } from '../corpus/orthography/token';
 import { ArabicToken } from '../arabic/arabic-token';
 import { TokenFooter } from './token-footer';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { formatLocation } from '../corpus/orthography/location';
 import './verse-token.scss';
 

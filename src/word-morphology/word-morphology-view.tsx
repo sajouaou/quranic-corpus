@@ -3,8 +3,9 @@ import { TaggedToken } from './tagged-token';
 import { CloseButton } from '../components/close-button';
 import { MarkupView } from '../components/markup-view';
 import { NodeCircle } from './node-circle';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import { ColorService } from '../theme/color-service';
+import { findRootInDescription, formatRootArabic, formatRootName, getRootUrl } from '../search/root';
 import { container } from 'tsyringe';
 import './word-morphology-view.scss';
 
@@ -17,6 +18,7 @@ export const WordMorphologyView = ({ wordMorphology }: Props) => {
     const { token, summary, segmentDescriptions, arabicGrammar } = wordMorphology;
     const { segments } = token;
     const colorService = container.resolve(ColorService);
+    const root = findRootInDescription(summary);
 
     return (
         <div className='word-morphology-view'>
@@ -29,6 +31,14 @@ export const WordMorphologyView = ({ wordMorphology }: Props) => {
                 <div className='summary'>
                     <MarkupView markup={summary} />
                 </div>
+                {
+                    root &&
+                    <div className='root'>
+                        Quran Dictionary: <Link to={getRootUrl(root)}>
+                            <span className='letters'>{formatRootArabic(root)}</span> {formatRootName(root)}
+                        </Link>
+                    </div>
+                }
                 <div className='descriptions'>
                     {
                         (() => {

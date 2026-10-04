@@ -1,6 +1,6 @@
 import { Token } from '../corpus/orthography/token';
 import { ArabicToken } from '../arabic/arabic-token';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { formatLocation } from '../corpus/orthography/location';
 import { getVerseId } from './verse-id';
 import './reader-token.scss';

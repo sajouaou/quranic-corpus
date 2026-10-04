@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import { ChapterService } from '../corpus/orthography/chapter-service';
 import { SelectorList } from './selector-list';
 import { getPagePath } from './navigation';

@@ -1,0 +1,42 @@
+.progress-bar {
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 15px;
+
+        .label {
+            font-weight: bold;
+        }
+
+        .percent {
+            font-size: 20px;
+            font-weight: bold;
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    .track {
+        height: 12px;
+        margin-top: 8px;
+        border-radius: 6px;
+        background: #e6eaee;
+        overflow: hidden;
+
+        .fill {
+            height: 100%;
+            border-radius: 6px;
+            background: rgb(63, 132, 161);
+        }
+    }
+
+    .detail {
+        margin-top: 6px;
+        font-size: 90%;
+        color: #575757;
+    }
+
+    &.draft .track .fill {
+        background: #e37010;
+    }
+}

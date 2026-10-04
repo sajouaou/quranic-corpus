@@ -1,0 +1,5044 @@
+-- words
+n1 = word(39:1:1)
+n2 = word(39:1:2)
+n3 = N(*)
+n4 = word(39:1:3)
+n5 = word(39:1:4)
+n6 = word(39:1:5)
+n7 = word(39:1:6)
+
+-- phrases
+n8 = PP(n4 - n5)
+
+-- edges
+poss(n2 - n1)
+gen(n5 - n4)
+adj(n6 - n5)
+adj(n7 - n5)
+link(n8 - n3)
+pred(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:2:1)
+n3, n4 = word(39:2:2)
+n5, n6 = word(39:2:3)
+n7 = word(39:2:4)
+n8, n9 = word(39:2:5)
+
+-- phrases
+n10 = PP(n5 - n6)
+n11 = PP(n8 - n9)
+n12 = VS(n3 - n9)
+
+-- edges
+subjx(n2 - n1)
+subj(n4 - n3)
+gen(n6 - n5)
+link(n10 - n3)
+obj(n7 - n3)
+gen(n9 - n8)
+link(n11 - n3)
+predx(n12 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:2:6)
+n3 = PRON(أَنتَ)
+n4 = word(39:2:7)
+n5 = word(39:2:8)
+n6, n7 = word(39:2:9)
+n8 = word(39:2:10)
+
+-- phrases
+n9 = PP(n6 - n7)
+
+-- edges
+obj(n4 - n2)
+circ(n5 - n2)
+gen(n7 - n6)
+link(n9 - n5)
+obj(n8 - n5)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:3:1)
+n2, n3 = word(39:3:2)
+n4 = word(39:3:3)
+n5 = word(39:3:4)
+
+-- phrases
+n6 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+conj(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:3:5)
+n3, n4 = word(39:3:6)
+n5 = word(39:3:7)
+n6, n7 = word(39:3:8)
+n8 = word(39:3:9)
+
+-- phrases
+n9 = PP(n5 - n6)
+n10 = VS(n3 - n8)
+
+-- edges
+subj(n4 - n3)
+gen(n6 - n5)
+poss(n7 - n6)
+link(n9 - n3)
+obj(n8 - n3)
+sub(n10 - n2)
+
+go
+
+-- words
+n1 = word(39:3:10)
+n2, n3 = word(39:3:11)
+n4 = PRON(نَحْنُ)
+n5 = word(39:3:12)
+n6, n7, n8, n9 = word(39:3:13)
+n10 = word(39:3:14)
+n11 = word(39:3:15)
+n12 = word(39:3:16)
+
+-- phrases
+n13 = PP(n10 - n11)
+n14 = VS(n7 - n12)
+n15 = SC(n6 - n12)
+
+-- edges
+neg(n2 - n1)
+obj(n3 - n2)
+subj(n8 - n7)
+obj(n9 - n7)
+gen(n11 - n10)
+link(n13 - n7)
+circ(n12 - n7)
+sub(n14 - n6)
+res(n5 - n15)
+link(n15 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:3:17)
+n2 = word(39:3:18)
+n3 = word(39:3:19)
+n4 = PRON(هُوَ)
+n5, n6 = word(39:3:20)
+n7 = word(39:3:21)
+n8 = word(39:3:22)
+n9 = word(39:3:23)
+n10 = N(*)
+n11, n12 = word(39:3:24)
+n13, n14 = word(39:3:25)
+
+-- phrases
+n15 = PP(n11 - n12)
+n16 = NS(n9 - n10)
+n17 = PP(n7 - n8)
+n18 = VS(n3 - n10)
+
+-- edges
+subjx(n2 - n1)
+link(n5 - n3)
+poss(n6 - n5)
+gen(n8 - n7)
+gen(n12 - n11)
+link(n15 - n13)
+subj(n14 - n13)
+pred(n10 - n9)
+sub(n16 - n8)
+link(n17 - n3)
+subj(n4 - n3)
+predx(n18 - n1)
+
+go
+
+-- words
+n1 = word(39:3:26)
+n2 = word(39:3:27)
+n3 = word(39:3:28)
+n4 = word(39:3:29)
+n5 = PRON(هُوَ)
+n6 = word(39:3:30)
+n7 = word(39:3:31)
+n8 = word(39:3:32)
+n9 = word(39:3:33)
+
+-- phrases
+n10 = NS(n7 - n9)
+n11 = VS(n3 - n9)
+
+-- edges
+subjx(n2 - n1)
+neg(n4 - n3)
+obj(n6 - n4)
+pred(n8 - n7)
+adj(n9 - n8)
+sub(n10 - n6)
+subj(n5 - n4)
+predx(n11 - n1)
+
+go
+
+-- words
+n1 = word(39:4:1)
+n2 = word(39:4:2)
+n3 = word(39:4:3)
+n4 = word(39:4:4)
+n5 = word(39:4:5)
+n6 = PRON(هُوَ)
+n7 = word(39:4:6)
+
+-- phrases
+n8 = VS(n5 - n7)
+n9 = SC(n4 - n7)
+n10 = VS(n2 - n7)
+
+-- edges
+subj(n3 - n2)
+obj(n7 - n5)
+subj(n6 - n5)
+sub(n8 - n4)
+obj(n9 - n2)
+cond(n10 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:4:7)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:4:8)
+n6 = word(39:4:9)
+n7 = PRON(هُوَ)
+n8 = word(39:4:10)
+n9 = word(39:4:11)
+n10 = PRON(هُوَ)
+
+-- phrases
+n11 = VS(n9 - n10)
+n12 = VS(n6 - n10)
+n13 = PP(n4 - n5)
+
+-- edges
+emph(n1 - n2)
+gen(n5 - n4)
+obj(n8 - n6)
+subj(n10 - n9)
+sub(n11 - n8)
+subj(n7 - n6)
+sub(n12 - n5)
+link(n13 - n2)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:4:12)
+
+-- edges
+poss(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:4:13)
+n2 = word(39:4:14)
+n3 = word(39:4:15)
+n4 = word(39:4:16)
+
+-- edges
+pred(n2 - n1)
+adj(n3 - n2)
+adj(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:5:1)
+n2 = PRON(هُوَ)
+n3 = word(39:5:2)
+n4, n5 = word(39:5:3)
+n6 = N(*)
+n7, n8 = word(39:5:4)
+
+-- phrases
+n9 = PP(n7 - n8)
+
+-- edges
+conj(n5 - n3)
+gen(n8 - n7)
+link(n9 - n6)
+circ(n6 - n3)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:5:5)
+n2 = PRON(هُوَ)
+n3 = word(39:5:6)
+n4 = word(39:5:7)
+n5 = word(39:5:8)
+
+-- phrases
+n6 = PP(n4 - n5)
+
+-- edges
+obj(n3 - n1)
+gen(n5 - n4)
+link(n6 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:5:9)
+n3 = PRON(هُوَ)
+n4 = word(39:5:10)
+n5 = word(39:5:11)
+n6 = word(39:5:12)
+
+-- phrases
+n7 = PP(n5 - n6)
+
+-- edges
+obj(n4 - n2)
+gen(n6 - n5)
+link(n7 - n2)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:5:13)
+n3 = PRON(هُوَ)
+n4 = word(39:5:14)
+n5, n6 = word(39:5:15)
+
+-- edges
+obj(n4 - n2)
+conj(n6 - n4)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:5:16)
+n2 = word(39:5:17)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:5:18)
+n6 = word(39:5:19)
+
+-- phrases
+n7 = PP(n4 - n5)
+n8 = VS(n2 - n6)
+
+-- edges
+gen(n5 - n4)
+conj(n6 - n5)
+link(n7 - n2)
+subj(n3 - n2)
+adj(n8 - n1)
+
+go
+
+-- words
+n1 = word(39:5:20)
+n2 = word(39:5:21)
+n3 = word(39:5:22)
+n4 = word(39:5:23)
+
+-- phrases
+n5 = NS(n2 - n4)
+
+-- edges
+pred(n3 - n2)
+adj(n4 - n3)
+pred(n5 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:6:1)
+n3 = PRON(هُوَ)
+n4 = word(39:6:2)
+n5 = word(39:6:3)
+n6 = word(39:6:4)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+obj(n2 - n1)
+gen(n5 - n4)
+conj(n6 - n5)
+link(n7 - n1)
+subj(n3 - n1)
+
+go
+
+-- words
+n1 = word(39:6:5)
+n2 = word(39:6:6)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:6:7)
+n6, n7 = word(39:6:8)
+
+-- phrases
+n8 = PP(n4 - n5)
+
+-- edges
+gen(n5 - n4)
+link(n8 - n2)
+obj(n6 - n2)
+poss(n7 - n6)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:6:9)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:6:10)
+n6 = word(39:6:11)
+n7 = word(39:6:12)
+n8 = word(39:6:13)
+n9 = word(39:6:14)
+
+-- phrases
+n10 = PP(n4 - n5)
+n11 = PP(n6 - n7)
+
+-- edges
+gen(n5 - n4)
+link(n10 - n2)
+gen(n7 - n6)
+link(n11 - n2)
+obj(n8 - n2)
+poss(n9 - n8)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:6:15)
+n3 = PRON(هُوَ)
+n4 = word(39:6:16)
+n5 = word(39:6:17)
+n6, n7 = word(39:6:18)
+n8 = word(39:6:19)
+n9 = ADJ(*)
+n10 = word(39:6:20)
+n11 = word(39:6:21)
+n12 = word(39:6:22)
+
+-- phrases
+n13 = PP(n4 - n5)
+n14 = PP(n10 - n11)
+
+-- edges
+obj(n2 - n1)
+gen(n5 - n4)
+poss(n6 - n5)
+poss(n7 - n6)
+link(n13 - n1)
+obj(n8 - n1)
+gen(n11 - n10)
+poss(n12 - n11)
+link(n14 - n9)
+adj(n9 - n8)
+subj(n3 - n1)
+
+go
+
+-- words
+n1 = word(39:6:23)
+n2 = word(39:6:24)
+n3 = word(39:6:25)
+
+-- phrases
+n4 = PP(n1 - n2)
+
+-- edges
+gen(n2 - n1)
+poss(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:6:26)
+n2 = word(39:6:27)
+n3, n4 = word(39:6:28)
+
+-- edges
+pred(n2 - n1)
+app(n3 - n2)
+poss(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:6:29)
+n3 = N(*)
+n4 = word(39:6:30)
+
+-- phrases
+n5 = PP(n1 - n2)
+
+-- edges
+gen(n2 - n1)
+pred(n3 - n4)
+link(n5 - n3)
+
+go
+
+-- words
+n1 = word(39:6:31)
+n2 = word(39:6:32)
+n3 = word(39:6:33)
+n4 = word(39:6:34)
+
+go
+
+-- words
+n1, n2 = word(39:6:35)
+n3, n4 = word(39:6:36)
+
+-- edges
+intg(n3 - n2)
+pass(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:7:1)
+n2, n3 = word(39:7:2)
+n4, n5 = word(39:7:3)
+n6 = word(39:7:4)
+n7 = word(39:7:5)
+n8, n9 = word(39:7:6)
+
+-- phrases
+n10 = VS(n2 - n3)
+n11 = PP(n8 - n9)
+n12 = NS(n5 - n9)
+
+-- edges
+subj(n3 - n2)
+cond(n10 - n1)
+subjx(n6 - n5)
+gen(n9 - n8)
+link(n11 - n7)
+adj(n7 - n5)
+rslt(n12 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:7:7)
+n3 = word(39:7:8)
+n4 = PRON(هُوَ)
+n5, n6, n7 = word(39:7:9)
+n8 = word(39:7:10)
+
+-- phrases
+n9 = PP(n5 - n6)
+
+-- edges
+neg(n3 - n2)
+gen(n6 - n5)
+poss(n7 - n6)
+link(n9 - n3)
+obj(n8 - n3)
+subj(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:7:11)
+n3, n4 = word(39:7:12)
+n5, n6 = word(39:7:13)
+n7 = PRON(هُوَ)
+n8, n9 = word(39:7:14)
+
+-- phrases
+n10 = VS(n3 - n4)
+n11 = PP(n8 - n9)
+n12 = VS(n5 - n9)
+
+-- edges
+subj(n4 - n3)
+cond(n10 - n2)
+obj(n6 - n5)
+gen(n9 - n8)
+link(n11 - n5)
+subj(n7 - n5)
+rslt(n12 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:7:15)
+n3 = word(39:7:16)
+n4 = word(39:7:17)
+n5 = word(39:7:18)
+n6 = word(39:7:19)
+
+-- edges
+neg(n3 - n2)
+subj(n4 - n3)
+obj(n5 - n3)
+subj(n6 - n3)
+
+go
+
+-- words
+n1 = word(39:7:20)
+n2 = word(39:7:21)
+n3, n4 = word(39:7:22)
+n5 = N(*)
+n6, n7 = word(39:7:23)
+
+-- phrases
+n8 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+poss(n4 - n3)
+poss(n7 - n6)
+pred(n5 - n6)
+link(n8 - n5)
+
+go
+
+-- words
+n1, n2, n3 = word(39:7:24)
+n4 = PRON(هُوَ)
+n5, n6 = word(39:7:25)
+n7, n8 = word(39:7:26)
+n9, n10 = word(39:7:27)
+
+-- phrases
+n11 = VS(n9 - n10)
+n12 = NS(n7 - n10)
+n13 = PP(n5 - n6)
+
+-- edges
+obj(n3 - n2)
+gen(n6 - n5)
+subjx(n8 - n7)
+subj(n10 - n9)
+predx(n11 - n7)
+sub(n12 - n6)
+link(n13 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:7:28)
+n3 = word(39:7:29)
+n4, n5 = word(39:7:30)
+n6 = word(39:7:31)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+subjx(n2 - n1)
+predx(n3 - n1)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n7 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:8:1)
+n3 = word(39:8:2)
+n4 = word(39:8:3)
+n5 = word(39:8:4)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+obj(n4 - n3)
+subj(n5 - n3)
+cond(n6 - n2)
+
+go
+
+-- words
+n1 = word(39:8:5)
+n2 = PRON(هُوَ)
+n3, n4 = word(39:8:6)
+n5 = word(39:8:7)
+n6, n7 = word(39:8:8)
+
+-- phrases
+n8 = PP(n6 - n7)
+
+-- edges
+obj(n3 - n1)
+poss(n4 - n3)
+circ(n5 - n1)
+gen(n7 - n6)
+link(n8 - n5)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:8:9)
+n2 = word(39:8:10)
+n3, n4 = word(39:8:11)
+n5 = PRON(هُوَ)
+n6 = word(39:8:12)
+n7 = ADJ(*)
+n8, n9 = word(39:8:13)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = VS(n3 - n9)
+
+-- edges
+obj(n4 - n3)
+obj(n6 - n3)
+gen(n9 - n8)
+link(n10 - n7)
+adj(n7 - n6)
+subj(n5 - n3)
+cond(n11 - n2)
+
+go
+
+-- words
+n1 = word(39:8:14)
+n2 = word(39:8:15)
+n3 = word(39:8:16)
+n4 = PRON(هُوَ)
+n5 = word(39:8:17)
+n6 = PRON(هُوَ)
+n7, n8 = word(39:8:18)
+n9 = word(39:8:19)
+n10 = word(39:8:20)
+
+-- phrases
+n11 = PP(n7 - n8)
+n12 = PP(n9 - n10)
+n13 = VS(n5 - n10)
+n14 = NS(n3 - n10)
+
+-- edges
+subj(n2 - n1)
+gen(n8 - n7)
+link(n11 - n5)
+gen(n10 - n9)
+link(n12 - n5)
+subj(n6 - n5)
+predx(n13 - n3)
+sub(n14 - n2)
+subjx(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:8:21)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:8:22)
+n6 = word(39:8:23)
+n7, n8 = word(39:8:24)
+n9 = PRON(هُوَ)
+n10 = word(39:8:25)
+n11, n12 = word(39:8:26)
+
+-- phrases
+n13 = PP(n4 - n5)
+n14 = PP(n10 - n11)
+n15 = VS(n8 - n12)
+n16 = SC(n7 - n12)
+
+-- edges
+gen(n5 - n4)
+link(n13 - n2)
+obj(n6 - n2)
+gen(n11 - n10)
+poss(n12 - n11)
+link(n14 - n8)
+subj(n9 - n8)
+sub(n15 - n7)
+link(n16 - n2)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:8:27)
+n2 = PRON(أَنتَ)
+n3 = word(39:8:28)
+n4 = PRON(أَنتَ)
+n5, n6, n7 = word(39:8:29)
+n8 = N(*)
+n9 = word(39:8:30)
+
+-- phrases
+n10 = PP(n5 - n6)
+n11 = VS(n3 - n9)
+
+-- edges
+gen(n6 - n5)
+poss(n7 - n6)
+link(n10 - n3)
+adj(n9 - n8)
+cog(n8 - n3)
+subj(n4 - n3)
+obj(n11 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:8:31)
+n3 = N(*)
+n4 = word(39:8:32)
+n5 = word(39:8:33)
+n6 = word(39:8:34)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+subjx(n2 - n1)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n7 - n3)
+predx(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:9:1)
+n3 = word(39:9:2)
+n4 = word(39:9:3)
+n5 = word(39:9:4)
+n6 = word(39:9:5)
+n7 = word(39:9:6)
+n8, n9 = word(39:9:7)
+
+-- phrases
+n10 = NS(n3 - n9)
+
+-- edges
+pred(n4 - n3)
+obj(n5 - n4)
+poss(n6 - n5)
+circ(n7 - n4)
+conj(n9 - n7)
+pred(n10 - n2)
+
+go
+
+-- words
+n1 = word(39:9:8)
+n2 = PRON(هُوَ)
+n3 = word(39:9:9)
+n4, n5 = word(39:9:10)
+n6 = PRON(هُوَ)
+n7 = word(39:9:11)
+n8, n9 = word(39:9:12)
+
+-- edges
+obj(n3 - n1)
+conj(n5 - n1)
+obj(n7 - n5)
+poss(n8 - n7)
+poss(n9 - n8)
+subj(n6 - n5)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:9:13)
+n2 = PRON(أَنتَ)
+n3 = word(39:9:14)
+n4 = word(39:9:15)
+n5 = PRON(هُوَ)
+n6 = word(39:9:16)
+n7, n8 = word(39:9:17)
+
+-- phrases
+n9 = VS(n7 - n8)
+n10 = VS(n3 - n8)
+
+-- edges
+intg(n4 - n3)
+obj(n6 - n4)
+subj(n8 - n7)
+sub(n9 - n6)
+subj(n5 - n4)
+obj(n10 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:9:18)
+n3 = word(39:9:19)
+n4, n5 = word(39:9:20)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+neg(n4 - n3)
+subj(n5 - n4)
+sub(n6 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:9:21)
+n3 = word(39:9:22)
+n4 = word(39:9:23)
+n5 = word(39:9:24)
+
+-- edges
+prev(n2 - n1)
+subj(n4 - n3)
+poss(n5 - n4)
+
+go
+
+-- words
+n1 = word(39:10:1)
+n2 = PRON(أَنتَ)
+n3, n4, n5 = word(39:10:2)
+n6 = word(39:10:3)
+n7, n8 = word(39:10:4)
+
+-- phrases
+n9 = VS(n7 - n8)
+n10 = S(n3 - n8)
+
+-- edges
+voc(n4 - n3)
+poss(n5 - n4)
+adj(n6 - n4)
+subj(n8 - n7)
+sub(n9 - n6)
+obj(n10 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:10:5)
+n3, n4 = word(39:10:6)
+
+-- edges
+subj(n2 - n1)
+obj(n3 - n1)
+poss(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:10:7)
+n3, n4 = word(39:10:8)
+n5 = word(39:10:9)
+n6 = word(39:10:10)
+n7 = N(*)
+n8 = word(39:10:11)
+n9 = word(39:10:12)
+
+-- phrases
+n10 = PP(n5 - n6)
+n11 = VS(n3 - n6)
+n12 = PP(n1 - n2)
+
+-- edges
+gen(n2 - n1)
+subj(n4 - n3)
+gen(n6 - n5)
+link(n10 - n3)
+sub(n11 - n2)
+conj(n9 - n8)
+pred(n7 - n8)
+link(n12 - n7)
+
+go
+
+-- words
+n1, n2 = word(39:10:13)
+n3 = word(39:10:14)
+n4 = word(39:10:15)
+
+-- edges
+poss(n3 - n2)
+pred(n4 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:10:16)
+n3 = word(39:10:17)
+n4 = word(39:10:18)
+n5, n6 = word(39:10:19)
+n7, n8 = word(39:10:20)
+n9 = word(39:10:21)
+
+-- phrases
+n10 = PP(n7 - n8)
+
+-- edges
+prev(n2 - n1)
+pass(n4 - n3)
+obj(n5 - n3)
+poss(n6 - n5)
+gen(n8 - n7)
+poss(n9 - n8)
+link(n10 - n3)
+
+go
+
+-- words
+n1 = word(39:11:1)
+n2 = PRON(أَنتَ)
+n3, n4 = word(39:11:2)
+n5, n6 = word(39:11:3)
+n7 = word(39:11:4)
+n8 = word(39:11:5)
+n9 = PRON(أَنَا)
+n10 = word(39:11:6)
+
+-- phrases
+n11 = VS(n8 - n10)
+n12 = SC(n7 - n10)
+n13 = VS(n5 - n10)
+n14 = NS(n3 - n10)
+
+-- edges
+subjx(n4 - n3)
+pass(n6 - n5)
+obj(n10 - n8)
+subj(n9 - n8)
+sub(n11 - n7)
+link(n12 - n5)
+predx(n13 - n3)
+obj(n14 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:11:7)
+n2, n3 = word(39:11:8)
+n4 = word(39:11:9)
+
+-- phrases
+n5 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+conj(n4 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:12:1)
+n4, n5 = word(39:12:2)
+n6 = word(39:12:3)
+n7 = PRON(أَنَا)
+n8 = word(39:12:4)
+n9 = word(39:12:5)
+
+-- phrases
+n10 = NS(n6 - n9)
+n11 = PP(n4 - n5)
+
+-- edges
+pass(n3 - n2)
+gen(n5 - n4)
+predx(n8 - n6)
+poss(n9 - n8)
+sub(n10 - n5)
+link(n11 - n2)
+subjx(n7 - n6)
+
+go
+
+-- words
+n1 = word(39:13:1)
+n2 = PRON(أَنتَ)
+n3, n4 = word(39:13:2)
+n5 = word(39:13:3)
+n6 = PRON(أَنَا)
+n7 = word(39:13:4)
+n8, n9 = word(39:13:5)
+n10, n11 = word(39:13:6)
+n12 = word(39:13:7)
+n13 = word(39:13:8)
+n14 = word(39:13:9)
+
+-- phrases
+n15 = VS(n8 - n14)
+n16 = CS(n7 - n14)
+n17 = VS(n5 - n14)
+n18 = NS(n3 - n14)
+
+-- edges
+subjx(n4 - n3)
+subj(n9 - n8)
+poss(n11 - n10)
+poss(n13 - n12)
+adj(n14 - n13)
+obj(n12 - n8)
+cond(n15 - n7)
+obj(n16 - n5)
+subj(n6 - n5)
+predx(n17 - n3)
+obj(n18 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:14:1)
+n2 = PRON(أَنتَ)
+n3 = word(39:14:2)
+n4 = word(39:14:3)
+n5 = PRON(أَنَا)
+n6 = word(39:14:4)
+n7, n8 = word(39:14:5)
+n9, n10 = word(39:14:6)
+
+-- phrases
+n11 = PP(n7 - n8)
+
+-- edges
+obj(n6 - n4)
+gen(n8 - n7)
+link(n11 - n6)
+subj(n9 - n6)
+poss(n10 - n9)
+subj(n5 - n4)
+obj(n3 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:15:1)
+n4 = word(39:15:2)
+n5, n6 = word(39:15:3)
+n7 = word(39:15:4)
+n8, n9 = word(39:15:5)
+
+-- phrases
+n10 = PP(n7 - n8)
+n11 = VS(n5 - n6)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+subj(n6 - n5)
+gen(n8 - n7)
+poss(n9 - n8)
+sub(n11 - n4)
+
+go
+
+-- words
+n1 = word(39:15:6)
+n2 = PRON(أَنتَ)
+n3 = word(39:15:7)
+n4 = word(39:15:8)
+n5 = word(39:15:9)
+n6, n7 = word(39:15:10)
+n8, n9 = word(39:15:11)
+
+-- phrases
+n10 = VS(n6 - n9)
+n11 = NS(n3 - n9)
+
+-- edges
+subjx(n4 - n3)
+adj(n5 - n4)
+subj(n7 - n6)
+obj(n8 - n6)
+poss(n9 - n8)
+sub(n10 - n5)
+obj(n11 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:15:12)
+n4 = word(39:15:13)
+n5 = word(39:15:14)
+
+-- edges
+poss(n3 - n2)
+conj(n4 - n2)
+poss(n5 - n4)
+
+go
+
+-- words
+n1 = word(39:15:15)
+n2 = word(39:15:16)
+n3 = word(39:15:17)
+n4 = word(39:15:18)
+n5 = word(39:15:19)
+
+-- phrases
+n6 = NS(n3 - n5)
+n7 = NS(n2 - n5)
+
+-- edges
+pred(n4 - n3)
+adj(n5 - n4)
+pred(n6 - n2)
+pred(n7 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:16:1)
+n3 = word(39:16:2)
+n4, n5 = word(39:16:3)
+n6 = N(*)
+n7 = word(39:16:4)
+n8 = ADJ(*)
+n9 = word(39:16:5)
+n10 = word(39:16:6)
+
+-- phrases
+n11 = PP(n1 - n2)
+n12 = PP(n3 - n4)
+n13 = PP(n9 - n10)
+
+-- edges
+gen(n2 - n1)
+gen(n4 - n3)
+poss(n5 - n4)
+gen(n10 - n9)
+link(n13 - n8)
+adj(n8 - n7)
+pred(n6 - n7)
+link(n12 - n6)
+
+go
+
+-- words
+n1, n2 = word(39:16:7)
+n3, n4 = word(39:16:8)
+n5 = N(*)
+n6 = word(39:16:9)
+
+-- phrases
+n7 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+poss(n4 - n3)
+pred(n5 - n6)
+link(n7 - n5)
+
+go
+
+-- words
+n1 = word(39:16:10)
+n2 = word(39:16:11)
+n3 = word(39:16:12)
+n4, n5 = word(39:16:13)
+n6, n7 = word(39:16:14)
+
+-- phrases
+n8 = PP(n4 - n5)
+n9 = VS(n2 - n7)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+link(n8 - n2)
+obj(n6 - n2)
+poss(n7 - n6)
+pred(n9 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:16:15)
+n4, n5, n6, n7 = word(39:16:16)
+
+-- edges
+voc(n2 - n1)
+poss(n3 - n2)
+subj(n6 - n5)
+obj(n7 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:17:1)
+n3, n4 = word(39:17:2)
+n5 = word(39:17:3)
+n6 = word(39:17:4)
+n7, n8, n9 = word(39:17:5)
+
+-- phrases
+n10 = VS(n7 - n9)
+n11 = SC(n6 - n9)
+n12 = VS(n3 - n9)
+
+-- edges
+subj(n4 - n3)
+obj(n5 - n3)
+subj(n8 - n7)
+obj(n9 - n7)
+sub(n10 - n6)
+link(n11 - n3)
+sub(n12 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:17:6)
+n4 = word(39:17:7)
+n5 = word(39:17:8)
+n6, n7 = word(39:17:9)
+n8 = word(39:17:10)
+
+-- phrases
+n9 = PP(n4 - n5)
+n10 = PP(n6 - n7)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+link(n9 - n2)
+gen(n7 - n6)
+link(n10 - n2)
+subj(n8 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:17:11)
+n3, n4 = word(39:17:12)
+
+-- edges
+subj(n3 - n2)
+poss(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:18:1)
+n2, n3 = word(39:18:2)
+n4 = word(39:18:3)
+
+-- phrases
+n5 = VS(n2 - n4)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+sub(n5 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:18:4)
+n4, n5 = word(39:18:5)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+poss(n5 - n4)
+
+go
+
+-- words
+n1 = word(39:18:6)
+n2 = word(39:18:7)
+n3, n4 = word(39:18:8)
+n5 = word(39:18:9)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+pred(n2 - n1)
+obj(n4 - n3)
+subj(n5 - n3)
+sub(n6 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:18:10)
+n3 = word(39:18:11)
+n4 = word(39:18:12)
+n5 = word(39:18:13)
+
+-- phrases
+n6 = NS(n3 - n5)
+
+-- edges
+pred(n4 - n3)
+poss(n5 - n4)
+pred(n6 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:19:1)
+n4 = word(39:19:2)
+n5, n6 = word(39:19:3)
+n7 = word(39:19:4)
+n8 = word(39:19:5)
+
+-- phrases
+n9 = PP(n5 - n6)
+n10 = VS(n4 - n8)
+
+-- edges
+sup(n2 - n3)
+gen(n6 - n5)
+link(n9 - n4)
+subj(n7 - n4)
+poss(n8 - n7)
+sub(n10 - n3)
+intg(n3 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:19:6)
+n4 = word(39:19:7)
+n5 = word(39:19:8)
+n6 = N(*)
+n7 = word(39:19:9)
+n8 = word(39:19:10)
+
+-- phrases
+n9 = PP(n7 - n8)
+n10 = VS(n4 - n8)
+
+-- edges
+subj(n5 - n4)
+gen(n8 - n7)
+link(n9 - n6)
+sub(n6 - n5)
+pred(n10 - n3)
+
+go
+
+-- words
+n1 = word(39:20:1)
+n2 = word(39:20:2)
+n3, n4 = word(39:20:3)
+n5, n6 = word(39:20:4)
+
+-- phrases
+n7 = VS(n3 - n6)
+
+-- edges
+subj(n4 - n3)
+obj(n5 - n3)
+poss(n6 - n5)
+sub(n7 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:20:5)
+n3 = N(*)
+n4 = word(39:20:6)
+n5 = word(39:20:7)
+n6, n7 = word(39:20:8)
+n8 = word(39:20:9)
+n9 = word(39:20:10)
+
+-- phrases
+n10 = PP(n1 - n2)
+n11 = PP(n5 - n6)
+
+-- edges
+gen(n2 - n1)
+gen(n6 - n5)
+poss(n7 - n6)
+conj(n9 - n8)
+pred(n3 - n4)
+link(n10 - n3)
+
+go
+
+-- words
+n1 = word(39:20:11)
+n2 = word(39:20:12)
+n3, n4 = word(39:20:13)
+n5 = word(39:20:14)
+
+-- phrases
+n6 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+poss(n4 - n3)
+link(n6 - n1)
+subj(n5 - n1)
+
+go
+
+-- words
+n1 = word(39:20:15)
+n2 = word(39:20:16)
+
+-- edges
+poss(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:20:17)
+n2 = word(39:20:18)
+n3 = word(39:20:19)
+n4 = word(39:20:20)
+
+-- edges
+neg(n2 - n1)
+subj(n3 - n2)
+obj(n4 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:21:1)
+n3 = word(39:21:2)
+n4 = PRON(أَنتَ)
+n5 = word(39:21:3)
+n6 = word(39:21:4)
+n7 = word(39:21:5)
+n8 = PRON(هُوَ)
+n9 = word(39:21:6)
+n10 = word(39:21:7)
+n11 = word(39:21:8)
+
+-- phrases
+n12 = PP(n9 - n10)
+n13 = VS(n7 - n11)
+n14 = NS(n5 - n11)
+
+-- edges
+intg(n2 - n1)
+neg(n3 - n2)
+subjx(n6 - n5)
+gen(n10 - n9)
+link(n12 - n7)
+obj(n11 - n7)
+subj(n8 - n7)
+predx(n13 - n5)
+obj(n14 - n3)
+subj(n4 - n3)
+
+go
+
+-- words
+n1, n2, n3 = word(39:21:9)
+n4 = PRON(هُوَ)
+n5 = word(39:21:10)
+n6 = word(39:21:11)
+n7 = word(39:21:12)
+
+-- phrases
+n8 = PP(n6 - n7)
+
+-- edges
+obj(n3 - n2)
+obj(n5 - n2)
+gen(n7 - n6)
+link(n8 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:21:13)
+n2 = word(39:21:14)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:21:15)
+n6 = word(39:21:16)
+n7 = word(39:21:17)
+n8, n9 = word(39:21:18)
+
+-- phrases
+n10 = PP(n4 - n5)
+
+-- edges
+gen(n5 - n4)
+link(n10 - n2)
+obj(n6 - n2)
+conj(n7 - n6)
+subj(n8 - n7)
+poss(n9 - n8)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:21:19)
+n2 = word(39:21:20)
+n3 = PRON(هُوَ)
+n4, n5, n6 = word(39:21:21)
+n7 = PRON(أَنتَ)
+n8 = word(39:21:22)
+
+-- edges
+conj(n5 - n2)
+obj(n6 - n5)
+obj(n8 - n5)
+subj(n7 - n5)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:21:23)
+n2, n3 = word(39:21:24)
+n4 = PRON(هُوَ)
+n5 = word(39:21:25)
+
+-- edges
+obj(n3 - n2)
+obj(n5 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:21:26)
+n2 = N(*)
+n3 = word(39:21:27)
+n4 = word(39:21:28)
+n5, n6 = word(39:21:29)
+n7, n8 = word(39:21:30)
+n9 = word(39:21:31)
+
+-- phrases
+n10 = PP(n3 - n4)
+n11 = PP(n7 - n8)
+
+-- edges
+gen(n4 - n3)
+emph(n5 - n6)
+gen(n8 - n7)
+poss(n9 - n8)
+link(n11 - n6)
+link(n10 - n2)
+predx(n2 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:22:1)
+n4 = word(39:22:2)
+n5 = word(39:22:3)
+n6, n7 = word(39:22:4)
+n8, n9 = word(39:22:5)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = VS(n4 - n9)
+
+-- edges
+sup(n2 - n3)
+subj(n5 - n4)
+obj(n6 - n4)
+poss(n7 - n6)
+gen(n9 - n8)
+link(n10 - n4)
+sub(n11 - n3)
+intg(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:22:6)
+n3 = N(*)
+n4 = word(39:22:7)
+n5 = word(39:22:8)
+n6 = word(39:22:9)
+n7, n8 = word(39:22:10)
+
+-- phrases
+n9 = PP(n4 - n5)
+n10 = PP(n6 - n7)
+
+-- edges
+gen(n5 - n4)
+gen(n7 - n6)
+poss(n8 - n7)
+link(n9 - n3)
+pred(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:22:11)
+n3, n4 = word(39:22:12)
+n5, n6 = word(39:22:13)
+n7 = word(39:22:14)
+n8 = word(39:22:15)
+n9 = word(39:22:16)
+
+-- phrases
+n10 = PP(n3 - n4)
+n11 = PP(n7 - n8)
+
+-- edges
+gen(n4 - n3)
+poss(n6 - n5)
+gen(n8 - n7)
+poss(n9 - n8)
+conj(n5 - n2)
+
+go
+
+-- words
+n1 = word(39:22:17)
+n2 = word(39:22:18)
+n3 = word(39:22:19)
+n4 = word(39:22:20)
+
+-- phrases
+n5 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+conj(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:23:1)
+n2 = word(39:23:2)
+n3 = PRON(هُوَ)
+n4 = word(39:23:3)
+n5 = word(39:23:4)
+n6 = word(39:23:5)
+n7 = word(39:23:6)
+n8 = word(39:23:7)
+
+-- phrases
+n9 = VS(n2 - n8)
+
+-- edges
+obj(n4 - n2)
+poss(n5 - n4)
+obj(n6 - n2)
+conj(n7 - n6)
+conj(n8 - n7)
+subj(n3 - n2)
+pred(n9 - n1)
+
+go
+
+-- words
+n1 = word(39:23:8)
+n2, n3 = word(39:23:9)
+n4 = word(39:23:10)
+n5 = word(39:23:11)
+n6, n7 = word(39:23:12)
+n8, n9 = word(39:23:13)
+
+-- phrases
+n10 = PP(n2 - n3)
+n11 = VS(n6 - n9)
+
+-- edges
+gen(n3 - n2)
+link(n10 - n1)
+subj(n4 - n1)
+adj(n5 - n4)
+subj(n7 - n6)
+obj(n8 - n6)
+poss(n9 - n8)
+sub(n11 - n5)
+
+go
+
+-- words
+n1 = word(39:23:14)
+n2 = word(39:23:15)
+n3, n4 = word(39:23:16)
+n5, n6, n7 = word(39:23:17)
+n8 = N(*)
+n9 = word(39:23:18)
+n10 = word(39:23:19)
+n11 = word(39:23:20)
+
+-- phrases
+n12 = PP(n9 - n10)
+
+-- edges
+subj(n3 - n2)
+poss(n4 - n3)
+poss(n7 - n6)
+gen(n10 - n9)
+poss(n11 - n10)
+link(n12 - n8)
+circ(n8 - n6)
+
+go
+
+-- words
+n1 = word(39:23:21)
+n2 = word(39:23:22)
+n3 = word(39:23:23)
+n4 = word(39:23:24)
+n5 = PRON(هُوَ)
+n6, n7 = word(39:23:25)
+n8 = word(39:23:26)
+n9 = word(39:23:27)
+n10 = PRON(هُوَ)
+
+-- phrases
+n11 = PP(n6 - n7)
+n12 = VS(n9 - n10)
+n13 = VS(n4 - n10)
+
+-- edges
+app(n2 - n1)
+poss(n3 - n2)
+gen(n7 - n6)
+link(n11 - n4)
+obj(n8 - n4)
+subj(n10 - n9)
+sub(n12 - n8)
+subj(n5 - n4)
+pred(n13 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:23:28)
+n3 = word(39:23:29)
+n4 = word(39:23:30)
+
+-- phrases
+n5 = VS(n3 - n4)
+
+-- edges
+subj(n4 - n3)
+sub(n5 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:23:31)
+n3, n4 = word(39:23:32)
+n5 = word(39:23:33)
+n6 = word(39:23:34)
+
+-- phrases
+n7 = PP(n3 - n4)
+n8 = PP(n5 - n6)
+
+-- edges
+gen(n4 - n3)
+gen(n6 - n5)
+
+go
+
+-- words
+n1, n2, n3 = word(39:24:1)
+n4 = word(39:24:2)
+n5 = PRON(هُوَ)
+n6, n7, n8 = word(39:24:3)
+n9 = word(39:24:4)
+n10 = word(39:24:5)
+n11 = word(39:24:6)
+n12 = word(39:24:7)
+
+-- phrases
+n13 = PP(n6 - n7)
+n14 = VS(n4 - n12)
+
+-- edges
+sup(n2 - n3)
+gen(n7 - n6)
+poss(n8 - n7)
+link(n13 - n4)
+obj(n9 - n4)
+poss(n10 - n9)
+obj(n11 - n4)
+poss(n12 - n11)
+subj(n5 - n4)
+sub(n14 - n3)
+intg(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:24:8)
+n3, n4 = word(39:24:9)
+n5, n6 = word(39:24:10)
+n7 = word(39:24:11)
+n8, n9 = word(39:24:12)
+n10, n11 = word(39:24:13)
+
+-- phrases
+n12 = PP(n3 - n4)
+n13 = VS(n10 - n11)
+n14 = NS(n8 - n11)
+n15 = VS(n5 - n11)
+
+-- edges
+gen(n4 - n3)
+link(n12 - n2)
+subj(n6 - n5)
+obj(n7 - n5)
+subjx(n9 - n8)
+subj(n11 - n10)
+predx(n13 - n8)
+sub(n14 - n7)
+pass(n15 - n2)
+
+go
+
+-- words
+n1 = word(39:25:1)
+n2 = word(39:25:2)
+n3 = N(*)
+n4 = word(39:25:3)
+n5, n6 = word(39:25:4)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+subj(n2 - n1)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n7 - n3)
+sub(n3 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:25:5)
+n4 = word(39:25:6)
+n5 = word(39:25:7)
+n6 = word(39:25:8)
+n7 = word(39:25:9)
+n8, n9 = word(39:25:10)
+
+-- phrases
+n10 = VS(n7 - n9)
+n11 = PP(n5 - n6)
+
+-- edges
+obj(n3 - n2)
+subj(n4 - n2)
+gen(n6 - n5)
+neg(n8 - n7)
+subj(n9 - n8)
+poss(n10 - n6)
+link(n11 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:26:1)
+n4 = word(39:26:2)
+n5 = word(39:26:3)
+n6 = word(39:26:4)
+n7 = word(39:26:5)
+n8 = word(39:26:6)
+
+-- phrases
+n9 = PP(n6 - n7)
+
+-- edges
+obj(n3 - n2)
+subj(n4 - n2)
+obj(n5 - n2)
+gen(n7 - n6)
+adj(n8 - n7)
+link(n9 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:26:7)
+n4 = word(39:26:8)
+n5 = word(39:26:9)
+
+-- edges
+emph(n2 - n3)
+poss(n4 - n3)
+adj(n5 - n3)
+
+go
+
+-- words
+n1 = word(39:26:10)
+n2, n3 = word(39:26:11)
+n4, n5 = word(39:26:12)
+
+-- phrases
+n6 = VS(n4 - n5)
+n7 = NS(n2 - n5)
+
+-- edges
+subjx(n3 - n2)
+subj(n5 - n4)
+predx(n6 - n2)
+cond(n7 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:27:1)
+n4, n5 = word(39:27:2)
+n6, n7 = word(39:27:3)
+n8 = word(39:27:4)
+n9 = word(39:27:5)
+n10 = word(39:27:6)
+n11 = word(39:27:7)
+n12 = word(39:27:8)
+n13 = word(39:27:9)
+
+-- phrases
+n14 = PP(n6 - n7)
+n15 = PP(n8 - n9)
+n16 = PP(n11 - n12)
+
+-- edges
+emph(n2 - n3)
+cert(n4 - n3)
+subj(n5 - n4)
+gen(n7 - n6)
+link(n14 - n4)
+gen(n9 - n8)
+poss(n10 - n9)
+link(n15 - n4)
+gen(n12 - n11)
+poss(n13 - n12)
+link(n16 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:27:10)
+n3, n4 = word(39:27:11)
+
+-- phrases
+n5 = VS(n3 - n4)
+
+-- edges
+subjx(n2 - n1)
+subj(n4 - n3)
+predx(n5 - n1)
+
+go
+
+-- words
+n1 = word(39:28:1)
+n2 = word(39:28:2)
+n3 = word(39:28:3)
+n4 = word(39:28:4)
+n5 = word(39:28:5)
+
+-- edges
+adj(n2 - n1)
+app(n3 - n1)
+adj(n4 - n3)
+poss(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:28:6)
+n3, n4 = word(39:28:7)
+
+-- phrases
+n5 = VS(n3 - n4)
+
+-- edges
+subjx(n2 - n1)
+subj(n4 - n3)
+predx(n5 - n1)
+
+go
+
+-- words
+n1 = word(39:29:1)
+n2 = word(39:29:2)
+n3 = word(39:29:3)
+n4 = word(39:29:4)
+n5 = ADJ(*)
+n6, n7 = word(39:29:5)
+n8 = N(*)
+n9 = word(39:29:6)
+n10 = word(39:29:7)
+
+-- phrases
+n11 = PP(n6 - n7)
+
+-- edges
+subj(n2 - n1)
+obj(n3 - n1)
+obj(n4 - n1)
+gen(n7 - n6)
+conj(n10 - n9)
+pred(n8 - n9)
+link(n11 - n8)
+adj(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:29:8)
+n3 = word(39:29:9)
+n4 = ADJ(*)
+n5, n6 = word(39:29:10)
+n7 = word(39:29:11)
+n8, n9 = word(39:29:12)
+n10 = word(39:29:13)
+
+-- phrases
+n11 = VS(n7 - n10)
+n12 = PP(n5 - n6)
+
+-- edges
+conj(n3 - n2)
+gen(n6 - n5)
+intg(n8 - n7)
+subj(n9 - n8)
+obj(n10 - n8)
+adj(n11 - n6)
+link(n12 - n4)
+adj(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:29:14)
+n2 = N(*)
+n3, n4 = word(39:29:15)
+
+-- phrases
+n5 = PP(n3 - n4)
+
+-- edges
+gen(n4 - n3)
+link(n5 - n2)
+pred(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:29:16)
+n2, n3 = word(39:29:17)
+n4 = word(39:29:18)
+n5, n6 = word(39:29:19)
+
+-- phrases
+n7 = VS(n4 - n6)
+
+-- edges
+ret(n2 - n1)
+poss(n3 - n2)
+neg(n5 - n4)
+subj(n6 - n5)
+pred(n7 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:30:1)
+n3 = word(39:30:2)
+
+-- edges
+subjx(n2 - n1)
+predx(n3 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:30:3)
+n4 = word(39:30:4)
+
+-- edges
+subjx(n3 - n2)
+predx(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:31:1)
+n2, n3 = word(39:31:2)
+n4 = word(39:31:3)
+n5 = word(39:31:4)
+n6 = word(39:31:5)
+n7, n8 = word(39:31:6)
+n9, n10 = word(39:31:7)
+
+-- phrases
+n11 = VS(n9 - n10)
+
+-- edges
+subjx(n3 - n2)
+predx(n4 - n2)
+poss(n5 - n4)
+link(n6 - n4)
+poss(n7 - n6)
+poss(n8 - n7)
+subj(n10 - n9)
+predx(n11 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:32:1)
+n3 = word(39:32:2)
+n4, n5 = word(39:32:3)
+n6 = word(39:32:4)
+n7 = PRON(هُوَ)
+n8 = word(39:32:5)
+n9 = word(39:32:6)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = VS(n6 - n9)
+n12 = PP(n4 - n5)
+
+-- edges
+pred(n3 - n2)
+gen(n5 - n4)
+gen(n9 - n8)
+link(n10 - n6)
+subj(n7 - n6)
+sub(n11 - n5)
+link(n12 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:32:7)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:32:8)
+n6 = word(39:32:9)
+n7, n8 = word(39:32:10)
+n9 = PRON(هُوَ)
+
+-- phrases
+n10 = PP(n4 - n5)
+n11 = VS(n7 - n9)
+
+-- edges
+gen(n5 - n4)
+link(n10 - n2)
+link(n6 - n2)
+obj(n8 - n7)
+subj(n9 - n7)
+poss(n11 - n6)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:32:11)
+n3 = PRON(هُوَ)
+n4 = word(39:32:12)
+n5 = word(39:32:13)
+n6 = word(39:32:14)
+n7 = ADJ(*)
+n8, n9 = word(39:32:15)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = PP(n4 - n5)
+
+-- edges
+intg(n2 - n1)
+gen(n5 - n4)
+conj(n6 - n5)
+gen(n9 - n8)
+link(n10 - n7)
+adj(n7 - n6)
+predx(n11 - n2)
+subjx(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:33:1)
+n3 = word(39:33:2)
+n4 = PRON(هُوَ)
+n5, n6 = word(39:33:3)
+n7, n8 = word(39:33:4)
+n9 = PRON(هُوَ)
+n10, n11 = word(39:33:5)
+
+-- phrases
+n12 = PP(n10 - n11)
+n13 = VS(n8 - n11)
+n14 = PP(n5 - n6)
+n15 = VS(n3 - n11)
+
+-- edges
+gen(n6 - n5)
+gen(n11 - n10)
+link(n12 - n8)
+subj(n9 - n8)
+adj(n13 - n6)
+link(n14 - n3)
+subj(n4 - n3)
+sub(n15 - n2)
+
+go
+
+-- words
+n1 = word(39:33:6)
+n2 = word(39:33:7)
+n3 = word(39:33:8)
+
+-- phrases
+n4 = NS(n2 - n3)
+
+-- edges
+pred(n3 - n2)
+pred(n4 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:34:1)
+n3 = N(*)
+n4 = word(39:34:2)
+n5, n6 = word(39:34:3)
+n7 = word(39:34:4)
+n8, n9 = word(39:34:5)
+
+-- phrases
+n10 = PP(n1 - n2)
+n11 = VS(n5 - n9)
+
+-- edges
+gen(n2 - n1)
+subj(n6 - n5)
+link(n7 - n5)
+poss(n8 - n7)
+poss(n9 - n8)
+sub(n11 - n4)
+pred(n3 - n4)
+link(n10 - n3)
+
+go
+
+-- words
+n1 = word(39:34:6)
+n2 = word(39:34:7)
+n3 = word(39:34:8)
+
+-- edges
+pred(n2 - n1)
+poss(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:35:1)
+n3 = word(39:35:2)
+n4, n5 = word(39:35:3)
+n6 = word(39:35:4)
+n7 = word(39:35:5)
+n8, n9 = word(39:35:6)
+
+-- phrases
+n10 = PP(n4 - n5)
+n11 = VS(n8 - n9)
+n12 = VS(n2 - n9)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+link(n10 - n2)
+obj(n6 - n2)
+poss(n7 - n6)
+subj(n9 - n8)
+sub(n11 - n7)
+sub(n12 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:35:7)
+n4 = PRON(هُوَ)
+n5, n6 = word(39:35:8)
+n7, n8 = word(39:35:9)
+n9 = word(39:35:10)
+n10, n11 = word(39:35:11)
+n12, n13 = word(39:35:12)
+
+-- phrases
+n14 = VS(n12 - n13)
+n15 = NS(n10 - n13)
+n16 = PP(n7 - n8)
+
+-- edges
+obj(n3 - n2)
+obj(n5 - n2)
+poss(n6 - n5)
+gen(n8 - n7)
+adj(n9 - n8)
+subjx(n11 - n10)
+subj(n13 - n12)
+predx(n14 - n10)
+sub(n15 - n9)
+link(n16 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:36:1)
+n3 = word(39:36:2)
+n4, n5 = word(39:36:3)
+n6, n7 = word(39:36:4)
+
+-- phrases
+n8 = PP(n4 - n5)
+
+-- edges
+intg(n2 - n1)
+subjx(n3 - n2)
+gen(n5 - n4)
+obj(n6 - n5)
+poss(n7 - n6)
+predx(n8 - n2)
+
+go
+
+-- words
+n1, n2, n3, n4 = word(39:36:5)
+n5, n6 = word(39:36:6)
+n7 = word(39:36:7)
+n8, n9 = word(39:36:8)
+
+-- phrases
+n10 = PP(n7 - n8)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+gen(n6 - n5)
+gen(n8 - n7)
+poss(n9 - n8)
+
+go
+
+-- words
+n1, n2 = word(39:36:9)
+n3 = word(39:36:10)
+n4 = word(39:36:11)
+n5, n6 = word(39:36:12)
+n7, n8 = word(39:36:13)
+n9 = word(39:36:14)
+n10 = word(39:36:15)
+
+-- phrases
+n11 = VS(n3 - n4)
+n12 = PP(n7 - n8)
+n13 = PP(n9 - n10)
+
+-- edges
+subj(n4 - n3)
+sub(n11 - n2)
+gen(n8 - n7)
+gen(n10 - n9)
+
+go
+
+-- words
+n1, n2 = word(39:37:1)
+n3 = word(39:37:2)
+n4 = word(39:37:3)
+
+-- phrases
+n5 = VS(n3 - n4)
+
+-- edges
+subj(n4 - n3)
+sub(n5 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:37:4)
+n3, n4 = word(39:37:5)
+n5 = word(39:37:6)
+n6 = word(39:37:7)
+
+-- phrases
+n7 = PP(n3 - n4)
+n8 = PP(n5 - n6)
+
+-- edges
+gen(n4 - n3)
+gen(n6 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:37:8)
+n3 = word(39:37:9)
+n4, n5 = word(39:37:10)
+n6 = word(39:37:11)
+n7 = word(39:37:12)
+
+-- phrases
+n8 = PP(n4 - n5)
+
+-- edges
+intg(n2 - n1)
+subjx(n3 - n2)
+gen(n5 - n4)
+poss(n7 - n6)
+conj(n6 - n5)
+predx(n8 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:38:1)
+n4, n5, n6 = word(39:38:2)
+n7 = word(39:38:3)
+n8 = word(39:38:4)
+n9 = PRON(هُوَ)
+n10 = word(39:38:5)
+n11, n12 = word(39:38:6)
+
+-- phrases
+n13 = VS(n8 - n9)
+n14 = S(n8 - n12)
+n15 = VS(n4 - n7)
+
+-- edges
+emph(n2 - n3)
+subj(n5 - n4)
+obj(n6 - n4)
+obj(n7 - n4)
+poss(n10 - n8)
+obj(n12 - n10)
+subj(n9 - n8)
+circ(n13 - n8)
+cond(n15 - n3)
+
+go
+
+-- words
+n1, n2, n3 = word(39:38:7)
+n4 = word(39:38:8)
+
+-- edges
+emph(n1 - n2)
+emph(n3 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:38:9)
+n2 = PRON(أَنتَ)
+n3, n4, n5, n6 = word(39:38:10)
+n7 = word(39:38:11)
+n8, n9 = word(39:38:12)
+n10 = word(39:38:13)
+n11 = word(39:38:14)
+n12 = word(39:38:15)
+
+-- phrases
+n13 = PP(n10 - n11)
+n14 = VS(n8 - n12)
+n15 = VS(n3 - n12)
+
+-- edges
+sup(n4 - n5)
+subj(n6 - n5)
+obj(n7 - n5)
+subj(n9 - n8)
+gen(n11 - n10)
+poss(n12 - n11)
+link(n13 - n8)
+sub(n14 - n7)
+intg(n5 - n3)
+obj(n15 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:38:16)
+n2, n3 = word(39:38:17)
+n4 = word(39:38:18)
+n5, n6 = word(39:38:19)
+
+-- phrases
+n7 = PP(n5 - n6)
+n8 = VS(n2 - n6)
+
+-- edges
+obj(n3 - n2)
+subj(n4 - n2)
+gen(n6 - n5)
+link(n7 - n2)
+cond(n8 - n1)
+
+go
+
+-- words
+n1 = word(39:38:20)
+n2 = word(39:38:21)
+n3 = word(39:38:22)
+n4, n5 = word(39:38:23)
+
+-- phrases
+n6 = NS(n2 - n5)
+
+-- edges
+poss(n4 - n3)
+poss(n5 - n4)
+pred(n3 - n2)
+pred(n6 - n1)
+
+go
+
+-- words
+n1 = word(39:38:24)
+n2, n3 = word(39:38:25)
+n4 = PRON(هُوَ)
+n5, n6 = word(39:38:26)
+n7 = word(39:38:27)
+n8 = word(39:38:28)
+n9 = word(39:38:29)
+n10, n11 = word(39:38:30)
+
+-- phrases
+n12 = NS(n8 - n11)
+n13 = PP(n5 - n6)
+
+-- edges
+obj(n3 - n2)
+gen(n6 - n5)
+poss(n10 - n9)
+poss(n11 - n10)
+pred(n9 - n8)
+adj(n12 - n6)
+link(n13 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:38:31)
+n2, n3 = word(39:38:32)
+n4 = word(39:38:33)
+
+-- edges
+subj(n2 - n1)
+poss(n3 - n2)
+subj(n4 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:38:34)
+n3 = word(39:38:35)
+n4 = word(39:38:36)
+
+-- phrases
+n5 = PP(n1 - n2)
+
+-- edges
+gen(n2 - n1)
+link(n5 - n3)
+subj(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:39:1)
+n2 = PRON(أَنتَ)
+n3, n4, n5 = word(39:39:2)
+
+-- phrases
+n6 = S(n3 - n5)
+
+-- edges
+voc(n4 - n3)
+poss(n5 - n4)
+obj(n6 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:39:3)
+n3 = word(39:39:4)
+n4, n5 = word(39:39:5)
+
+-- phrases
+n6 = PP(n3 - n4)
+
+-- edges
+subj(n2 - n1)
+gen(n4 - n3)
+poss(n5 - n4)
+link(n6 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:39:6)
+n3 = word(39:39:7)
+
+-- edges
+subjx(n2 - n1)
+predx(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:39:8)
+n3, n4 = word(39:39:9)
+
+-- edges
+fut(n2 - n3)
+subj(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:40:1)
+n2, n3 = word(39:40:2)
+n4 = word(39:40:3)
+n5, n6 = word(39:40:4)
+n7 = PRON(هُوَ)
+
+-- phrases
+n8 = VS(n2 - n4)
+n9 = VS(n5 - n7)
+
+-- edges
+obj(n3 - n2)
+subj(n4 - n2)
+sub(n8 - n1)
+obj(n6 - n5)
+subj(n7 - n5)
+pred(n9 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:40:5)
+n3, n4 = word(39:40:6)
+n5 = word(39:40:7)
+n6 = word(39:40:8)
+
+-- phrases
+n7 = PP(n3 - n4)
+
+-- edges
+gen(n4 - n3)
+link(n7 - n2)
+subj(n5 - n2)
+conj(n6 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:41:1)
+n3, n4 = word(39:41:2)
+n5, n6 = word(39:41:3)
+n7 = word(39:41:4)
+n8 = N(*)
+n9, n10 = word(39:41:5)
+n11, n12 = word(39:41:6)
+
+-- phrases
+n13 = PP(n5 - n6)
+n14 = PP(n9 - n10)
+n15 = PP(n11 - n12)
+n16 = VS(n3 - n10)
+
+-- edges
+subjx(n2 - n1)
+subj(n4 - n3)
+gen(n6 - n5)
+link(n13 - n3)
+obj(n7 - n3)
+gen(n10 - n9)
+gen(n12 - n11)
+link(n14 - n8)
+circ(n8 - n7)
+predx(n16 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:41:7)
+n3 = word(39:41:8)
+n4 = PRON(هُوَ)
+n5, n6, n7, n8 = word(39:41:9)
+
+-- phrases
+n9 = PP(n6 - n7)
+n10 = VS(n3 - n8)
+
+-- edges
+gen(n7 - n6)
+poss(n8 - n7)
+link(n9 - n3)
+subj(n4 - n3)
+sub(n10 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:41:10)
+n3 = word(39:41:11)
+n4 = PRON(هُوَ)
+n5, n6, n7 = word(39:41:12)
+n8 = word(39:41:13)
+n9 = PRON(هُوَ)
+n10, n11 = word(39:41:14)
+
+-- phrases
+n12 = PP(n10 - n11)
+n13 = VS(n3 - n11)
+
+-- edges
+prev(n7 - n6)
+conj(n8 - n3)
+gen(n11 - n10)
+link(n12 - n8)
+subj(n9 - n8)
+subj(n4 - n3)
+sub(n13 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:41:15)
+n3 = word(39:41:16)
+n4, n5 = word(39:41:17)
+n6, n7 = word(39:41:18)
+
+-- phrases
+n8 = PP(n4 - n5)
+
+-- edges
+neg(n3 - n2)
+gen(n5 - n4)
+gen(n7 - n6)
+link(n8 - n7)
+
+go
+
+-- words
+n1 = word(39:42:1)
+n2 = word(39:42:2)
+n3 = PRON(هُوَ)
+n4 = word(39:42:3)
+n5 = word(39:42:4)
+n6, n7 = word(39:42:5)
+
+-- phrases
+n8 = VS(n2 - n7)
+
+-- edges
+obj(n4 - n2)
+obj(n5 - n2)
+poss(n6 - n5)
+poss(n7 - n6)
+subj(n3 - n2)
+pred(n8 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:42:6)
+n3 = word(39:42:7)
+n4 = word(39:42:8)
+n5 = PRON(هِىَ)
+n6 = word(39:42:9)
+n7, n8 = word(39:42:10)
+
+-- phrases
+n9 = PP(n6 - n7)
+n10 = VS(n3 - n8)
+
+-- edges
+neg(n4 - n3)
+gen(n7 - n6)
+poss(n8 - n7)
+link(n9 - n4)
+subj(n5 - n4)
+sub(n10 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:42:11)
+n3 = word(39:42:12)
+n4 = word(39:42:13)
+n5 = PRON(هُوَ)
+n6, n7 = word(39:42:14)
+n8 = word(39:42:15)
+
+-- phrases
+n9 = PP(n6 - n7)
+n10 = VS(n4 - n8)
+
+-- edges
+subj(n3 - n2)
+gen(n7 - n6)
+link(n9 - n4)
+obj(n8 - n4)
+subj(n5 - n4)
+sub(n10 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:42:16)
+n3 = word(39:42:17)
+n4 = word(39:42:18)
+n5 = word(39:42:19)
+n6 = word(39:42:20)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+conj(n6 - n5)
+link(n7 - n2)
+
+go
+
+-- words
+n1 = word(39:42:21)
+n2 = N(*)
+n3 = word(39:42:22)
+n4 = word(39:42:23)
+n5, n6 = word(39:42:24)
+n7 = ADJ(*)
+n8, n9 = word(39:42:25)
+n10, n11 = word(39:42:26)
+
+-- phrases
+n12 = PP(n3 - n4)
+n13 = VS(n10 - n11)
+n14 = PP(n8 - n9)
+
+-- edges
+gen(n4 - n3)
+emph(n5 - n6)
+gen(n9 - n8)
+subj(n11 - n10)
+adj(n13 - n9)
+link(n14 - n7)
+adj(n7 - n6)
+link(n12 - n2)
+predx(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:43:1)
+n2, n3 = word(39:43:2)
+n4 = word(39:43:3)
+n5 = word(39:43:4)
+n6 = word(39:43:5)
+n7 = N(*)
+n8 = word(39:43:6)
+
+-- phrases
+n9 = PP(n4 - n5)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n9 - n2)
+adj(n8 - n7)
+cog(n7 - n2)
+
+go
+
+-- words
+n1 = word(39:43:7)
+n2 = PRON(أَنتَ)
+n3, n4, n5 = word(39:43:8)
+n6, n7 = word(39:43:9)
+n8 = word(39:43:10)
+n9, n10 = word(39:43:11)
+n11 = word(39:43:12)
+
+-- phrases
+n12 = VS(n8 - n11)
+n13 = NS(n6 - n11)
+n14 = CS(n3 - n11)
+
+-- edges
+sup(n4 - n5)
+subjx(n7 - n6)
+neg(n9 - n8)
+subj(n10 - n9)
+obj(n11 - n9)
+predx(n12 - n6)
+cond(n13 - n5)
+intg(n5 - n3)
+obj(n14 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:43:13)
+n3, n4 = word(39:43:14)
+
+-- edges
+neg(n3 - n2)
+subj(n4 - n3)
+
+go
+
+-- words
+n1 = word(39:44:1)
+n2, n3 = word(39:44:2)
+n4 = word(39:44:3)
+n5 = word(39:44:4)
+
+-- phrases
+n6 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+link(n6 - n1)
+subj(n4 - n1)
+obj(n5 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:44:5)
+n3 = N(*)
+n4 = word(39:44:6)
+n5 = word(39:44:7)
+n6, n7 = word(39:44:8)
+
+-- phrases
+n8 = PP(n1 - n2)
+
+-- edges
+gen(n2 - n1)
+poss(n5 - n4)
+conj(n7 - n5)
+pred(n3 - n4)
+link(n8 - n3)
+
+go
+
+-- words
+n1 = word(39:44:9)
+n2, n3 = word(39:44:10)
+n4, n5 = word(39:44:11)
+
+-- phrases
+n6 = PP(n2 - n3)
+
+-- edges
+gen(n3 - n2)
+link(n6 - n4)
+pass(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:45:1)
+n3 = word(39:45:2)
+n4 = word(39:45:3)
+n5, n6 = word(39:45:4)
+
+-- phrases
+n7 = VS(n3 - n4)
+
+-- edges
+pass(n4 - n3)
+cond(n7 - n2)
+poss(n6 - n5)
+
+go
+
+-- words
+n1 = word(39:45:5)
+n2 = word(39:45:6)
+n3 = word(39:45:7)
+n4 = word(39:45:8)
+n5, n6 = word(39:45:9)
+n7, n8 = word(39:45:10)
+
+-- phrases
+n9 = PP(n7 - n8)
+n10 = VS(n4 - n8)
+
+-- edges
+subj(n2 - n1)
+adj(n3 - n2)
+neg(n5 - n4)
+subj(n6 - n5)
+gen(n8 - n7)
+link(n9 - n5)
+sub(n10 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:45:11)
+n3 = word(39:45:12)
+n4 = word(39:45:13)
+n5 = N(*)
+n6 = word(39:45:14)
+n7, n8 = word(39:45:15)
+
+-- phrases
+n9 = PP(n6 - n7)
+n10 = VS(n3 - n8)
+
+-- edges
+pass(n4 - n3)
+gen(n7 - n6)
+poss(n8 - n7)
+link(n9 - n5)
+sub(n5 - n4)
+cond(n10 - n2)
+
+go
+
+-- words
+n1 = word(39:45:16)
+n2 = word(39:45:17)
+n3, n4 = word(39:45:18)
+
+-- phrases
+n5 = VS(n3 - n4)
+
+-- edges
+subj(n4 - n3)
+cond(n5 - n1)
+
+go
+
+-- words
+n1 = word(39:46:1)
+n2 = PRON(أَنتَ)
+n3, n4 = word(39:46:2)
+n5 = word(39:46:3)
+n6 = word(39:46:4)
+n7, n8 = word(39:46:5)
+n9 = word(39:46:6)
+n10 = word(39:46:7)
+n11, n12 = word(39:46:8)
+
+-- phrases
+n13 = S(n3 - n12)
+
+-- edges
+voc(n3 - n4)
+app(n5 - n3)
+poss(n6 - n5)
+conj(n8 - n6)
+obj(n9 - n8)
+poss(n10 - n9)
+conj(n12 - n10)
+obj(n13 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:46:9)
+n2 = word(39:46:10)
+n3 = PRON(هِىَ)
+n4 = word(39:46:11)
+n5, n6 = word(39:46:12)
+n7 = word(39:46:13)
+n8 = word(39:46:14)
+n9, n10 = word(39:46:15)
+n11 = N(*)
+n12, n13 = word(39:46:16)
+n14, n15 = word(39:46:17)
+
+-- phrases
+n16 = PP(n12 - n13)
+n17 = NS(n9 - n11)
+n18 = PP(n7 - n8)
+n19 = VS(n2 - n11)
+
+-- edges
+link(n4 - n2)
+poss(n5 - n4)
+poss(n6 - n5)
+gen(n8 - n7)
+subjx(n10 - n9)
+gen(n13 - n12)
+link(n16 - n14)
+subj(n15 - n14)
+predx(n11 - n9)
+sub(n17 - n8)
+link(n18 - n2)
+subj(n3 - n2)
+pred(n19 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:47:1)
+n3 = word(39:47:2)
+n4 = N(*)
+n5, n6 = word(39:47:3)
+n7, n8 = word(39:47:4)
+n9 = word(39:47:5)
+n10 = N(*)
+n11 = word(39:47:6)
+n12 = word(39:47:7)
+n13 = word(39:47:8)
+
+-- phrases
+n14 = PP(n11 - n12)
+n15 = VS(n7 - n12)
+n16 = PP(n5 - n6)
+n17 = NS(n3 - n12)
+
+-- edges
+gen(n6 - n5)
+subj(n8 - n7)
+obj(n9 - n7)
+gen(n12 - n11)
+link(n14 - n10)
+sub(n10 - n9)
+sub(n15 - n6)
+link(n16 - n4)
+predx(n4 - n3)
+cond(n17 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:47:9)
+n4 = N(*)
+n5, n6 = word(39:47:10)
+n7, n8, n9 = word(39:47:11)
+n10, n11 = word(39:47:12)
+n12 = word(39:47:13)
+n13 = word(39:47:14)
+n14 = word(39:47:15)
+n15 = word(39:47:16)
+n16 = word(39:47:17)
+
+-- phrases
+n17 = PP(n10 - n11)
+n18 = PP(n12 - n13)
+n19 = VS(n7 - n16)
+
+-- edges
+poss(n3 - n2)
+poss(n6 - n5)
+link(n5 - n4)
+circ(n4 - n2)
+emph(n7 - n8)
+subj(n9 - n8)
+gen(n11 - n10)
+link(n17 - n8)
+gen(n13 - n12)
+conj(n14 - n13)
+obj(n15 - n14)
+poss(n16 - n15)
+link(n18 - n8)
+adj(n19 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:47:18)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:47:19)
+n6 = word(39:47:20)
+n7 = word(39:47:21)
+n8 = word(39:47:22)
+n9 = word(39:47:23)
+n10, n11 = word(39:47:24)
+n12, n13 = word(39:47:25)
+
+-- phrases
+n14 = PP(n4 - n5)
+n15 = PP(n6 - n7)
+n16 = VS(n12 - n13)
+n17 = NS(n9 - n13)
+
+-- edges
+gen(n5 - n4)
+link(n14 - n2)
+gen(n7 - n6)
+link(n15 - n2)
+obj(n8 - n2)
+neg(n10 - n9)
+subjx(n11 - n10)
+subj(n13 - n12)
+predx(n16 - n10)
+sub(n17 - n8)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:48:1)
+n3, n4 = word(39:48:2)
+n5 = word(39:48:3)
+n6 = word(39:48:4)
+n7, n8 = word(39:48:5)
+
+-- phrases
+n9 = PP(n3 - n4)
+n10 = VS(n7 - n8)
+
+-- edges
+gen(n4 - n3)
+link(n9 - n2)
+subj(n5 - n2)
+poss(n6 - n5)
+subj(n8 - n7)
+sub(n10 - n6)
+
+go
+
+-- words
+n1, n2 = word(39:48:6)
+n3, n4 = word(39:48:7)
+n5 = word(39:48:8)
+n6, n7 = word(39:48:9)
+n8 = N(*)
+n9, n10 = word(39:48:10)
+n11, n12 = word(39:48:11)
+
+-- phrases
+n13 = PP(n3 - n4)
+n14 = PP(n9 - n10)
+n15 = NS(n6 - n8)
+
+-- edges
+gen(n4 - n3)
+link(n13 - n2)
+subj(n5 - n2)
+subjx(n7 - n6)
+gen(n10 - n9)
+link(n14 - n11)
+subj(n12 - n11)
+predx(n8 - n6)
+sub(n15 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:49:1)
+n3 = word(39:49:2)
+n4 = word(39:49:3)
+n5 = word(39:49:4)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+obj(n4 - n3)
+subj(n5 - n3)
+cond(n6 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:49:5)
+n3 = PRON(هُوَ)
+n4 = word(39:49:6)
+n5 = word(39:49:7)
+n6, n7, n8 = word(39:49:8)
+n9 = word(39:49:9)
+n10 = ADJ(*)
+n11, n12 = word(39:49:10)
+
+-- phrases
+n13 = PP(n11 - n12)
+n14 = VS(n6 - n12)
+
+-- edges
+obj(n2 - n1)
+subj(n7 - n6)
+obj(n8 - n6)
+obj(n9 - n6)
+gen(n12 - n11)
+link(n13 - n10)
+adj(n10 - n9)
+cond(n14 - n5)
+subj(n3 - n1)
+
+go
+
+-- words
+n1 = word(39:49:11)
+n2 = PRON(هُوَ)
+n3, n4 = word(39:49:12)
+n5, n6, n7 = word(39:49:13)
+n8 = word(39:49:14)
+n9 = word(39:49:15)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = VS(n5 - n9)
+
+-- edges
+prev(n4 - n3)
+pass(n6 - n5)
+obj(n7 - n5)
+gen(n9 - n8)
+link(n10 - n5)
+obj(n11 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:49:16)
+n2 = word(39:49:17)
+n3 = word(39:49:18)
+
+-- edges
+ret(n2 - n1)
+pred(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:49:19)
+n3, n4 = word(39:49:20)
+n5 = word(39:49:21)
+n6, n7 = word(39:49:22)
+
+-- phrases
+n8 = VS(n5 - n7)
+
+-- edges
+subjx(n3 - n2)
+poss(n4 - n3)
+neg(n6 - n5)
+subj(n7 - n6)
+predx(n8 - n2)
+
+go
+
+-- words
+n1 = word(39:50:1)
+n2, n3 = word(39:50:2)
+n4 = word(39:50:3)
+n5 = N(*)
+n6 = word(39:50:4)
+n7, n8 = word(39:50:5)
+
+-- phrases
+n9 = PP(n6 - n7)
+
+-- edges
+cert(n2 - n1)
+obj(n3 - n2)
+subj(n4 - n2)
+gen(n7 - n6)
+poss(n8 - n7)
+link(n9 - n5)
+sub(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:50:6)
+n3 = word(39:50:7)
+n4, n5 = word(39:50:8)
+n6 = word(39:50:9)
+n7, n8 = word(39:50:10)
+n9, n10 = word(39:50:11)
+
+-- phrases
+n11 = PP(n4 - n5)
+n12 = VS(n9 - n10)
+n13 = NS(n7 - n10)
+
+-- edges
+neg(n3 - n2)
+gen(n5 - n4)
+link(n11 - n3)
+subj(n6 - n3)
+subjx(n8 - n7)
+subj(n10 - n9)
+predx(n12 - n7)
+sub(n13 - n6)
+
+go
+
+-- words
+n1, n2, n3 = word(39:51:1)
+n4 = word(39:51:2)
+n5 = word(39:51:3)
+n6, n7 = word(39:51:4)
+
+-- phrases
+n8 = VS(n6 - n7)
+
+-- edges
+obj(n3 - n2)
+subj(n4 - n2)
+obj(n5 - n2)
+subj(n7 - n6)
+sub(n8 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:51:5)
+n3, n4 = word(39:51:6)
+n5 = N(*)
+n6 = word(39:51:7)
+n7 = word(39:51:8)
+
+-- phrases
+n8 = VS(n3 - n4)
+n9 = PP(n6 - n7)
+
+-- edges
+subj(n4 - n3)
+sub(n8 - n2)
+gen(n7 - n6)
+link(n9 - n5)
+circ(n5 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:51:9)
+n4 = word(39:51:10)
+n5 = word(39:51:11)
+n6, n7 = word(39:51:12)
+
+-- phrases
+n8 = VS(n6 - n7)
+
+-- edges
+fut(n1 - n2)
+obj(n3 - n2)
+subj(n4 - n2)
+poss(n5 - n4)
+subj(n7 - n6)
+sub(n8 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:51:13)
+n3 = word(39:51:14)
+n4 = N(*)
+n5, n6 = word(39:51:15)
+
+-- phrases
+n7 = PP(n5 - n6)
+
+-- edges
+neg(n3 - n2)
+gen(n6 - n5)
+link(n7 - n4)
+pred(n4 - n3)
+
+go
+
+-- words
+n1, n2, n3 = word(39:52:1)
+n4, n5 = word(39:52:2)
+n6 = word(39:52:3)
+n7 = word(39:52:4)
+n8 = word(39:52:5)
+n9 = PRON(هُوَ)
+n10 = word(39:52:6)
+n11, n12 = word(39:52:7)
+n13 = word(39:52:8)
+n14 = PRON(هُوَ)
+
+-- phrases
+n15 = VS(n13 - n14)
+n16 = PP(n11 - n12)
+n17 = VS(n8 - n14)
+n18 = NS(n6 - n14)
+
+-- edges
+sup(n2 - n3)
+neg(n4 - n3)
+subj(n5 - n4)
+subjx(n7 - n6)
+obj(n10 - n8)
+gen(n12 - n11)
+subj(n14 - n13)
+sub(n15 - n12)
+link(n16 - n8)
+subj(n9 - n8)
+predx(n17 - n6)
+obj(n18 - n4)
+intg(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:52:9)
+n3 = PRON(هُوَ)
+n4 = word(39:52:10)
+n5 = N(*)
+n6 = word(39:52:11)
+n7 = word(39:52:12)
+n8, n9 = word(39:52:13)
+n10 = ADJ(*)
+n11, n12 = word(39:52:14)
+n13, n14 = word(39:52:15)
+
+-- phrases
+n15 = PP(n6 - n7)
+n16 = VS(n13 - n14)
+n17 = PP(n11 - n12)
+
+-- edges
+gen(n7 - n6)
+emph(n8 - n9)
+gen(n12 - n11)
+subj(n14 - n13)
+adj(n16 - n12)
+link(n17 - n10)
+adj(n10 - n9)
+link(n15 - n5)
+predx(n5 - n4)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:53:1)
+n2 = PRON(أَنتَ)
+n3, n4, n5 = word(39:53:2)
+n6 = word(39:53:3)
+n7, n8 = word(39:53:4)
+n9 = word(39:53:5)
+n10, n11 = word(39:53:6)
+
+-- phrases
+n12 = PP(n9 - n10)
+n13 = VS(n7 - n11)
+n14 = S(n3 - n11)
+
+-- edges
+voc(n4 - n3)
+poss(n5 - n4)
+adj(n6 - n4)
+subj(n8 - n7)
+gen(n10 - n9)
+poss(n11 - n10)
+link(n12 - n7)
+sub(n13 - n6)
+obj(n14 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1 = word(39:53:7)
+n2, n3 = word(39:53:8)
+n4 = word(39:53:9)
+n5 = word(39:53:10)
+n6 = word(39:53:11)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+pro(n2 - n1)
+subj(n3 - n2)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n7 - n2)
+
+go
+
+-- words
+n1 = word(39:53:12)
+n2 = word(39:53:13)
+n3 = word(39:53:14)
+n4 = PRON(هُوَ)
+n5 = word(39:53:15)
+n6 = word(39:53:16)
+
+-- phrases
+n7 = VS(n3 - n6)
+
+-- edges
+subjx(n2 - n1)
+obj(n5 - n3)
+circ(n6 - n5)
+subj(n4 - n3)
+predx(n7 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:53:17)
+n3 = word(39:53:18)
+n4 = word(39:53:19)
+n5 = word(39:53:20)
+
+-- phrases
+n6 = NS(n3 - n5)
+
+-- edges
+subjx(n2 - n1)
+pred(n4 - n3)
+adj(n5 - n4)
+predx(n6 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:54:1)
+n4 = word(39:54:2)
+n5, n6 = word(39:54:3)
+n7, n8, n9 = word(39:54:4)
+n10, n11 = word(39:54:5)
+n12 = word(39:54:6)
+n13 = word(39:54:7)
+n14 = word(39:54:8)
+n15, n16 = word(39:54:9)
+n17 = word(39:54:10)
+
+-- phrases
+n18 = PP(n4 - n5)
+n19 = PP(n10 - n11)
+n20 = VS(n15 - n17)
+n21 = SC(n14 - n17)
+n22 = PP(n12 - n13)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n18 - n2)
+conj(n8 - n2)
+subj(n9 - n8)
+gen(n11 - n10)
+link(n19 - n8)
+gen(n13 - n12)
+obj(n16 - n15)
+subj(n17 - n15)
+sub(n20 - n14)
+poss(n21 - n13)
+link(n22 - n8)
+
+go
+
+-- words
+n1 = word(39:54:11)
+n2 = word(39:54:12)
+n3, n4 = word(39:54:13)
+
+-- edges
+neg(n3 - n2)
+pass(n4 - n3)
+
+go
+
+-- words
+n1, n2, n3 = word(39:55:1)
+n4 = word(39:55:2)
+n5 = word(39:55:3)
+n6 = word(39:55:4)
+n7 = PRON(هُوَ)
+n8, n9 = word(39:55:5)
+n10 = N(*)
+n11 = word(39:55:6)
+n12, n13 = word(39:55:7)
+n14 = word(39:55:8)
+n15 = word(39:55:9)
+
+-- phrases
+n16 = PP(n8 - n9)
+n17 = VS(n6 - n9)
+n18 = PP(n11 - n12)
+n19 = PP(n14 - n15)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+poss(n5 - n4)
+gen(n9 - n8)
+link(n16 - n6)
+pass(n7 - n6)
+sub(n17 - n5)
+gen(n12 - n11)
+poss(n13 - n12)
+gen(n15 - n14)
+link(n18 - n10)
+circ(n10 - n5)
+
+go
+
+-- words
+n1 = word(39:55:10)
+n2, n3 = word(39:55:11)
+n4 = word(39:55:12)
+n5 = word(39:55:13)
+
+-- phrases
+n6 = VS(n2 - n5)
+
+-- edges
+obj(n3 - n2)
+subj(n4 - n2)
+circ(n5 - n2)
+sub(n6 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:55:14)
+n3 = word(39:55:15)
+n4, n5 = word(39:55:16)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+neg(n4 - n3)
+subj(n5 - n4)
+pred(n6 - n2)
+
+go
+
+-- words
+n1 = word(39:56:1)
+n2 = word(39:56:2)
+n3 = word(39:56:3)
+n4, n5 = word(39:56:4)
+n6 = N(*)
+n7 = word(39:56:5)
+n8 = word(39:56:6)
+n9, n10 = word(39:56:7)
+n11 = word(39:56:8)
+n12 = word(39:56:9)
+n13 = word(39:56:10)
+
+-- phrases
+n14 = PP(n11 - n12)
+n15 = VS(n9 - n13)
+n16 = PP(n7 - n8)
+n17 = NS(n4 - n13)
+n18 = VS(n2 - n13)
+
+-- edges
+subj(n3 - n2)
+voc(n5 - n4)
+gen(n8 - n7)
+subj(n10 - n9)
+gen(n12 - n11)
+poss(n13 - n12)
+link(n14 - n9)
+sub(n15 - n8)
+link(n16 - n6)
+pred(n6 - n5)
+obj(n17 - n2)
+sub(n18 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:56:11)
+n3, n4 = word(39:56:12)
+n5, n6 = word(39:56:13)
+n7 = word(39:56:14)
+
+-- phrases
+n8 = NS(n3 - n4)
+n9 = PP(n6 - n7)
+n10 = S(n5 - n7)
+
+-- edges
+subjx(n4 - n3)
+cond(n8 - n2)
+emph(n5 - n6)
+gen(n7 - n6)
+
+go
+
+-- words
+n1 = word(39:57:1)
+n2 = word(39:57:2)
+n3 = PRON(هِىَ)
+n4 = word(39:57:3)
+n5 = word(39:57:4)
+n6 = word(39:57:5)
+n7, n8 = word(39:57:6)
+n9 = PRON(هُوَ)
+
+-- phrases
+n10 = VS(n7 - n9)
+n11 = NS(n5 - n9)
+n12 = CS(n4 - n9)
+
+-- edges
+subjx(n6 - n5)
+obj(n8 - n7)
+subj(n9 - n7)
+predx(n10 - n5)
+cond(n11 - n4)
+obj(n12 - n2)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:57:7)
+n4 = N(*)
+n5 = word(39:57:8)
+n6 = word(39:57:9)
+
+-- phrases
+n7 = PP(n5 - n6)
+
+-- edges
+emph(n1 - n2)
+subjx(n3 - n2)
+gen(n6 - n5)
+link(n7 - n4)
+predx(n4 - n2)
+
+go
+
+-- words
+n1 = word(39:58:1)
+n2 = word(39:58:2)
+n3 = PRON(هِىَ)
+n4 = word(39:58:3)
+n5 = word(39:58:4)
+n6 = PRON(هِىَ)
+n7 = word(39:58:5)
+
+-- phrases
+n8 = VS(n5 - n7)
+
+-- edges
+obj(n7 - n5)
+subj(n6 - n5)
+obj(n8 - n2)
+subj(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:58:6)
+n2 = word(39:58:7)
+n3, n4 = word(39:58:8)
+n5 = word(39:58:9)
+
+-- phrases
+n6 = PP(n3 - n4)
+n7 = NS(n2 - n5)
+
+-- edges
+gen(n4 - n3)
+subjx(n5 - n2)
+cond(n7 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:58:10)
+n3 = PRON(أَنَا)
+n4 = N(*)
+n5 = word(39:58:11)
+n6 = word(39:58:12)
+
+-- phrases
+n7 = PP(n5 - n6)
+
+-- edges
+caus(n1 - n2)
+gen(n6 - n5)
+link(n7 - n4)
+predx(n4 - n2)
+subjx(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:59:1)
+n2 = word(39:59:2)
+n3, n4 = word(39:59:3)
+n5, n6 = word(39:59:4)
+
+-- phrases
+n7 = VS(n2 - n6)
+
+-- edges
+cert(n3 - n2)
+obj(n4 - n3)
+subj(n5 - n3)
+poss(n6 - n5)
+
+go
+
+-- words
+n1, n2, n3 = word(39:59:5)
+n4, n5 = word(39:59:6)
+n6, n7, n8 = word(39:59:7)
+n9, n10, n11 = word(39:59:8)
+n12 = N(*)
+n13 = word(39:59:9)
+n14 = word(39:59:10)
+
+-- phrases
+n15 = PP(n4 - n5)
+n16 = PP(n13 - n14)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+link(n15 - n2)
+conj(n7 - n2)
+subj(n8 - n7)
+conj(n10 - n7)
+subjx(n11 - n10)
+gen(n14 - n13)
+link(n16 - n12)
+predx(n12 - n10)
+
+go
+
+-- words
+n1, n2 = word(39:60:1)
+n3 = word(39:60:2)
+n4 = word(39:60:3)
+n5 = PRON(أَنتَ)
+n6 = word(39:60:4)
+n7, n8 = word(39:60:5)
+n9 = word(39:60:6)
+n10 = word(39:60:7)
+
+-- phrases
+n11 = PP(n9 - n10)
+n12 = VS(n7 - n10)
+
+-- edges
+poss(n3 - n2)
+obj(n6 - n4)
+subj(n8 - n7)
+gen(n10 - n9)
+link(n11 - n7)
+sub(n12 - n6)
+subj(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:60:8)
+n3 = word(39:60:9)
+
+-- edges
+poss(n2 - n1)
+adj(n3 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:60:10)
+n3 = PRON(هُوَ)
+n4 = word(39:60:11)
+n5 = word(39:60:12)
+n6 = word(39:60:13)
+n7 = ADJ(*)
+n8, n9 = word(39:60:14)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = PP(n4 - n5)
+
+-- edges
+intg(n2 - n1)
+gen(n5 - n4)
+conj(n6 - n5)
+gen(n9 - n8)
+link(n10 - n7)
+adj(n7 - n6)
+predx(n11 - n2)
+subjx(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:61:1)
+n3 = word(39:61:2)
+n4 = word(39:61:3)
+n5, n6 = word(39:61:4)
+n7, n8, n9 = word(39:61:5)
+
+-- phrases
+n10 = PP(n7 - n8)
+n11 = VS(n5 - n9)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+subj(n6 - n5)
+gen(n8 - n7)
+poss(n9 - n8)
+link(n10 - n5)
+sub(n11 - n4)
+
+go
+
+-- words
+n1 = word(39:61:6)
+n2, n3 = word(39:61:7)
+n4 = word(39:61:8)
+
+-- edges
+neg(n2 - n1)
+obj(n3 - n2)
+subj(n4 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:61:9)
+n3 = word(39:61:10)
+n4, n5 = word(39:61:11)
+
+-- phrases
+n6 = VS(n4 - n5)
+
+-- edges
+neg(n3 - n2)
+subj(n5 - n4)
+pred(n6 - n3)
+
+go
+
+-- words
+n1 = word(39:62:1)
+n2 = word(39:62:2)
+n3 = word(39:62:3)
+n4 = word(39:62:4)
+
+-- edges
+app(n2 - n1)
+poss(n3 - n2)
+poss(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:62:5)
+n3 = word(39:62:6)
+n4 = word(39:62:7)
+n5 = word(39:62:8)
+n6 = word(39:62:9)
+
+-- phrases
+n7 = PP(n3 - n4)
+
+-- edges
+gen(n4 - n3)
+poss(n5 - n4)
+link(n7 - n6)
+pred(n6 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:63:1)
+n3 = N(*)
+n4 = word(39:63:2)
+n5 = word(39:63:3)
+n6, n7 = word(39:63:4)
+
+-- phrases
+n8 = PP(n1 - n2)
+
+-- edges
+gen(n2 - n1)
+poss(n5 - n4)
+conj(n7 - n5)
+pred(n3 - n4)
+link(n8 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:63:5)
+n3, n4 = word(39:63:6)
+n5, n6 = word(39:63:7)
+n7 = word(39:63:8)
+
+-- phrases
+n8 = PP(n5 - n6)
+n9 = VS(n3 - n7)
+
+-- edges
+subj(n4 - n3)
+gen(n6 - n5)
+poss(n7 - n6)
+link(n8 - n3)
+sub(n9 - n2)
+
+go
+
+-- words
+n1 = word(39:63:9)
+n2 = word(39:63:10)
+n3 = word(39:63:11)
+
+-- phrases
+n4 = NS(n2 - n3)
+
+-- edges
+pred(n3 - n2)
+pred(n4 - n1)
+
+go
+
+-- words
+n1 = word(39:64:1)
+n2 = PRON(أَنتَ)
+n3, n4, n5 = word(39:64:2)
+n6 = word(39:64:3)
+n7, n8, n9 = word(39:64:4)
+n10 = word(39:64:5)
+n11 = word(39:64:6)
+n12 = word(39:64:7)
+
+-- phrases
+n13 = VS(n4 - n12)
+
+-- edges
+sup(n4 - n5)
+poss(n6 - n5)
+obj(n5 - n7)
+subj(n8 - n7)
+obj(n9 - n7)
+conj(n10 - n7)
+subj(n11 - n10)
+conj(n12 - n11)
+obj(n13 - n1)
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2, n3 = word(39:65:1)
+n4 = word(39:65:2)
+n5 = PRON(هُوَ)
+n6, n7 = word(39:65:3)
+n8, n9 = word(39:65:4)
+n10 = word(39:65:5)
+n11 = word(39:65:6)
+n12, n13 = word(39:65:7)
+
+-- phrases
+n14 = PP(n6 - n7)
+n15 = PP(n11 - n12)
+
+-- edges
+emph(n2 - n3)
+cert(n4 - n3)
+gen(n7 - n6)
+link(n14 - n4)
+gen(n10 - n9)
+gen(n12 - n11)
+poss(n13 - n12)
+link(n15 - n4)
+pass(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:65:8)
+n3, n4 = word(39:65:9)
+n5, n6, n7 = word(39:65:10)
+n8, n9 = word(39:65:11)
+
+-- phrases
+n10 = VS(n3 - n4)
+n11 = VS(n5 - n9)
+
+-- edges
+emph(n1 - n2)
+subj(n4 - n3)
+cond(n10 - n2)
+emph(n5 - n6)
+emph(n7 - n6)
+subj(n8 - n6)
+poss(n9 - n8)
+rslt(n11 - n2)
+
+go
+
+-- words
+n1, n2, n3, n4 = word(39:65:12)
+n5 = PRON(أَنتَ)
+n6 = N(*)
+n7 = word(39:65:13)
+n8 = word(39:65:14)
+
+-- phrases
+n9 = PP(n7 - n8)
+
+-- edges
+emph(n2 - n3)
+emph(n4 - n3)
+gen(n8 - n7)
+link(n9 - n6)
+predx(n6 - n3)
+subjx(n5 - n3)
+
+go
+
+-- words
+n1 = word(39:66:1)
+n2 = word(39:66:2)
+n3, n4 = word(39:66:3)
+n5 = PRON(أَنتَ)
+n6, n7 = word(39:66:4)
+n8 = PRON(أَنتَ)
+n9 = N(*)
+n10 = word(39:66:5)
+n11 = word(39:66:6)
+
+-- phrases
+n12 = PP(n10 - n11)
+
+-- edges
+obj(n2 - n4)
+conj(n7 - n4)
+gen(n11 - n10)
+link(n12 - n9)
+predx(n9 - n7)
+subj(n5 - n4)
+subjx(n8 - n7)
+
+go
+
+-- words
+n1, n2 = word(39:67:1)
+n3, n4 = word(39:67:2)
+n5 = word(39:67:3)
+n6 = word(39:67:4)
+n7, n8 = word(39:67:5)
+
+-- edges
+neg(n3 - n2)
+subj(n4 - n3)
+obj(n5 - n3)
+cog(n6 - n3)
+poss(n7 - n6)
+poss(n8 - n7)
+
+go
+
+-- words
+n1, n2 = word(39:67:6)
+n3 = word(39:67:7)
+n4, n5 = word(39:67:8)
+n6 = word(39:67:9)
+n7 = word(39:67:10)
+
+-- edges
+circ(n3 - n2)
+subj(n4 - n3)
+poss(n5 - n4)
+obj(n6 - n4)
+poss(n7 - n6)
+
+go
+
+-- words
+n1, n2 = word(39:67:11)
+n3 = word(39:67:12)
+n4, n5, n6 = word(39:67:13)
+
+-- phrases
+n7 = PP(n4 - n5)
+
+-- edges
+pred(n3 - n2)
+gen(n5 - n4)
+poss(n6 - n5)
+link(n7 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:67:14)
+n3, n4 = word(39:67:15)
+n5 = PRON(هُوَ)
+n6, n7 = word(39:67:16)
+n8, n9 = word(39:67:17)
+
+-- phrases
+n10 = VS(n8 - n9)
+n11 = PP(n6 - n7)
+
+-- edges
+poss(n2 - n1)
+gen(n7 - n6)
+subj(n9 - n8)
+sub(n10 - n7)
+link(n11 - n4)
+subj(n5 - n4)
+
+go
+
+-- words
+n1, n2 = word(39:68:1)
+n3 = PRON(هُوَ)
+n4 = word(39:68:2)
+n5 = word(39:68:3)
+
+-- phrases
+n6 = PP(n4 - n5)
+
+-- edges
+gen(n5 - n4)
+link(n6 - n2)
+pass(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:68:4)
+n3 = word(39:68:5)
+n4 = N(*)
+n5 = word(39:68:6)
+n6 = word(39:68:7)
+
+-- phrases
+n7 = PP(n5 - n6)
+
+-- edges
+subj(n3 - n2)
+gen(n6 - n5)
+link(n7 - n4)
+sub(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:68:8)
+n3 = N(*)
+n4 = word(39:68:9)
+n5 = word(39:68:10)
+n6 = word(39:68:11)
+n7 = word(39:68:12)
+n8 = word(39:68:13)
+n9 = word(39:68:14)
+
+-- phrases
+n10 = PP(n4 - n5)
+n11 = VS(n8 - n9)
+
+-- edges
+gen(n5 - n4)
+res(n6 - n7)
+subj(n9 - n8)
+sub(n11 - n7)
+link(n10 - n3)
+sub(n3 - n2)
+
+go
+
+-- words
+n1 = word(39:68:15)
+n2 = word(39:68:16)
+n3, n4 = word(39:68:17)
+n5 = word(39:68:18)
+
+-- phrases
+n6 = PP(n3 - n4)
+
+-- edges
+gen(n4 - n3)
+link(n6 - n2)
+pass(n5 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:68:19)
+n3 = word(39:68:20)
+n4 = word(39:68:21)
+n5, n6 = word(39:68:22)
+
+-- phrases
+n7 = VS(n5 - n6)
+n8 = NS(n3 - n6)
+
+-- edges
+pred(n4 - n3)
+subj(n6 - n5)
+adj(n7 - n4)
+rslt(n8 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:69:1)
+n3 = word(39:69:2)
+n4, n5 = word(39:69:3)
+n6, n7 = word(39:69:4)
+
+-- phrases
+n8 = PP(n4 - n5)
+
+-- edges
+subj(n3 - n2)
+gen(n5 - n4)
+poss(n6 - n5)
+poss(n7 - n6)
+link(n8 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:69:5)
+n3 = word(39:69:6)
+n4, n5 = word(39:69:7)
+n6 = PRON(هُوَ)
+n7, n8 = word(39:69:8)
+n9, n10 = word(39:69:9)
+
+-- phrases
+n11 = PP(n7 - n8)
+
+-- edges
+pass(n3 - n2)
+conj(n5 - n2)
+gen(n8 - n7)
+conj(n10 - n8)
+link(n11 - n5)
+pass(n6 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:69:10)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:69:11)
+n6, n7 = word(39:69:12)
+
+-- phrases
+n8 = PP(n6 - n7)
+
+-- edges
+link(n4 - n2)
+poss(n5 - n4)
+gen(n7 - n6)
+link(n8 - n2)
+pass(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:69:13)
+n3 = word(39:69:14)
+n4, n5 = word(39:69:15)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+neg(n4 - n3)
+pass(n5 - n4)
+pred(n6 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:70:1)
+n3 = word(39:70:2)
+n4 = word(39:70:3)
+n5 = word(39:70:4)
+n6 = word(39:70:5)
+n7 = PRON(هِىَ)
+
+-- phrases
+n8 = VS(n6 - n7)
+
+-- edges
+pass(n3 - n2)
+poss(n4 - n3)
+obj(n5 - n2)
+subj(n7 - n6)
+sub(n8 - n5)
+
+go
+
+-- words
+n1, n2 = word(39:70:6)
+n3 = word(39:70:7)
+n4, n5 = word(39:70:8)
+n6, n7 = word(39:70:9)
+
+-- phrases
+n8 = VS(n6 - n7)
+n9 = PP(n4 - n5)
+
+-- edges
+pred(n3 - n2)
+gen(n5 - n4)
+subj(n7 - n6)
+sub(n8 - n5)
+link(n9 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:71:1)
+n3 = word(39:71:2)
+n4, n5 = word(39:71:3)
+n6 = word(39:71:4)
+n7 = word(39:71:5)
+n8 = word(39:71:6)
+
+-- phrases
+n9 = VS(n4 - n5)
+n10 = PP(n6 - n7)
+
+-- edges
+pass(n3 - n2)
+subj(n5 - n4)
+sub(n9 - n3)
+gen(n7 - n6)
+link(n10 - n2)
+obj(n8 - n2)
+
+go
+
+-- words
+n1 = word(39:71:7)
+n2 = word(39:71:8)
+n3, n4, n5 = word(39:71:9)
+
+-- phrases
+n6 = VS(n3 - n5)
+
+-- edges
+inc(n2 - n1)
+subj(n4 - n3)
+obj(n5 - n3)
+cond(n6 - n2)
+
+go
+
+-- words
+n1 = word(39:71:10)
+n2, n3 = word(39:71:11)
+n4, n5 = word(39:71:12)
+n6, n7 = word(39:71:13)
+n8, n9 = word(39:71:14)
+
+-- phrases
+n10 = PP(n6 - n7)
+
+-- edges
+pass(n2 - n1)
+poss(n3 - n2)
+conj(n5 - n1)
+gen(n7 - n6)
+link(n10 - n5)
+subj(n8 - n5)
+poss(n9 - n8)
+
+go
+
+-- words
+n1, n2 = word(39:71:15)
+n3, n4 = word(39:71:16)
+n5 = word(39:71:17)
+n6, n7 = word(39:71:18)
+n8, n9 = word(39:71:19)
+n10, n11 = word(39:71:20)
+n12 = word(39:71:21)
+n13, n14 = word(39:71:22)
+
+-- phrases
+n15 = PP(n6 - n7)
+n16 = PP(n10 - n11)
+n17 = VS(n8 - n14)
+
+-- edges
+intg(n2 - n1)
+neg(n3 - n2)
+obj(n4 - n3)
+subj(n5 - n3)
+gen(n7 - n6)
+subj(n9 - n8)
+gen(n11 - n10)
+link(n16 - n8)
+obj(n12 - n8)
+poss(n13 - n12)
+poss(n14 - n13)
+adj(n17 - n5)
+
+go
+
+-- words
+n1, n2, n3, n4 = word(39:71:23)
+n5 = word(39:71:24)
+n6, n7 = word(39:71:25)
+n8 = word(39:71:26)
+
+-- edges
+subj(n3 - n2)
+obj(n4 - n2)
+obj(n5 - n2)
+poss(n6 - n5)
+poss(n7 - n6)
+adj(n8 - n6)
+
+go
+
+-- words
+n1, n2 = word(39:71:27)
+n3 = word(39:71:28)
+
+-- edges
+subj(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:71:29)
+n3 = word(39:71:30)
+n4 = word(39:71:31)
+n5 = word(39:71:32)
+n6 = word(39:71:33)
+n7 = word(39:71:34)
+
+-- phrases
+n8 = PP(n6 - n7)
+
+-- edges
+amd(n3 - n2)
+subj(n4 - n3)
+poss(n5 - n4)
+gen(n7 - n6)
+link(n8 - n3)
+
+go
+
+-- words
+n1 = word(39:72:1)
+n2 = PRON(هُوَ)
+n3, n4 = word(39:72:2)
+n5 = word(39:72:3)
+n6 = word(39:72:4)
+n7 = word(39:72:5)
+n8, n9 = word(39:72:6)
+
+-- phrases
+n10 = PP(n8 - n9)
+n11 = VS(n3 - n9)
+
+-- edges
+subj(n4 - n3)
+obj(n5 - n3)
+poss(n6 - n5)
+circ(n7 - n3)
+gen(n9 - n8)
+link(n10 - n7)
+obj(n11 - n1)
+pass(n2 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:72:7)
+n3 = word(39:72:8)
+n4 = word(39:72:9)
+
+-- edges
+subj(n3 - n2)
+poss(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:73:1)
+n3 = word(39:73:2)
+n4, n5 = word(39:73:3)
+n6, n7 = word(39:73:4)
+n8 = word(39:73:5)
+n9 = word(39:73:6)
+n10 = word(39:73:7)
+
+-- phrases
+n11 = PP(n8 - n9)
+n12 = VS(n4 - n9)
+
+-- edges
+pass(n3 - n2)
+subj(n5 - n4)
+obj(n6 - n4)
+poss(n7 - n6)
+gen(n9 - n8)
+link(n11 - n4)
+sub(n12 - n3)
+obj(n10 - n2)
+
+go
+
+-- words
+n1 = word(39:73:8)
+n2 = word(39:73:9)
+n3, n4, n5 = word(39:73:10)
+n6, n7 = word(39:73:11)
+n8, n9 = word(39:73:12)
+
+-- phrases
+n10 = VS(n3 - n5)
+n11 = VS(n7 - n9)
+
+-- edges
+inc(n2 - n1)
+subj(n4 - n3)
+obj(n5 - n3)
+cond(n10 - n2)
+pass(n8 - n7)
+poss(n9 - n8)
+rslt(n11 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:73:13)
+n3, n4 = word(39:73:14)
+n5, n6 = word(39:73:15)
+n7 = word(39:73:16)
+n8 = N(*)
+n9, n10 = word(39:73:17)
+
+-- phrases
+n11 = PP(n3 - n4)
+n12 = PP(n9 - n10)
+
+-- edges
+gen(n4 - n3)
+link(n11 - n2)
+subj(n5 - n2)
+poss(n6 - n5)
+gen(n10 - n9)
+link(n12 - n8)
+circ(n8 - n7)
+
+go
+
+-- words
+n1, n2 = word(39:73:18)
+n3, n4, n5, n6 = word(39:73:19)
+n7 = word(39:73:20)
+
+-- edges
+pass(n2 - n1)
+subj(n5 - n4)
+obj(n6 - n4)
+circ(n7 - n6)
+
+go
+
+-- words
+n1, n2, n3 = word(39:74:1)
+n4 = word(39:74:2)
+n5 = N(*)
+n6, n7 = word(39:74:3)
+n8 = word(39:74:4)
+n9, n10 = word(39:74:5)
+n11 = PRON(هُوَ)
+n12, n13 = word(39:74:6)
+
+-- phrases
+n14 = VS(n9 - n13)
+n15 = PP(n6 - n7)
+n16 = NS(n4 - n13)
+
+-- edges
+subj(n3 - n2)
+gen(n7 - n6)
+adj(n8 - n7)
+obj(n10 - n9)
+obj(n12 - n9)
+poss(n13 - n12)
+subj(n11 - n9)
+sub(n14 - n8)
+link(n15 - n5)
+pred(n5 - n4)
+obj(n16 - n2)
+
+go
+
+-- words
+n1, n2, n3 = word(39:74:7)
+n4 = PRON(هُوَ)
+n5 = word(39:74:8)
+n6 = word(39:74:9)
+n7 = PRON(نَحْنُ)
+n8 = word(39:74:10)
+n9 = word(39:74:11)
+n10 = word(39:74:12)
+n11 = word(39:74:13)
+n12 = PRON(نَحْنُ)
+
+-- phrases
+n13 = PP(n8 - n9)
+n14 = VS(n11 - n12)
+
+-- edges
+obj(n3 - n2)
+obj(n5 - n2)
+conj(n6 - n2)
+gen(n9 - n8)
+link(n13 - n6)
+link(n10 - n6)
+subj(n12 - n11)
+poss(n14 - n10)
+subj(n7 - n6)
+subj(n4 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:74:14)
+n3 = word(39:74:15)
+n4 = word(39:74:16)
+
+-- edges
+subj(n3 - n2)
+poss(n4 - n3)
+
+go
+
+-- words
+n1, n2 = word(39:75:1)
+n3 = PRON(أَنتَ)
+n4 = word(39:75:2)
+n5 = word(39:75:3)
+n6 = word(39:75:4)
+n7 = word(39:75:5)
+n8 = word(39:75:6)
+
+-- phrases
+n9 = PP(n6 - n7)
+
+-- edges
+obj(n4 - n2)
+conj(n5 - n4)
+gen(n7 - n6)
+poss(n8 - n7)
+link(n9 - n2)
+subj(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:75:7)
+n3, n4 = word(39:75:8)
+n5, n6 = word(39:75:9)
+
+-- phrases
+n7 = PP(n3 - n4)
+
+-- edges
+subj(n2 - n1)
+gen(n4 - n3)
+poss(n5 - n4)
+poss(n6 - n5)
+link(n7 - n1)
+
+go
+
+-- words
+n1, n2 = word(39:75:10)
+n3 = PRON(هُوَ)
+n4, n5 = word(39:75:11)
+n6, n7 = word(39:75:12)
+
+-- phrases
+n8 = PP(n6 - n7)
+
+-- edges
+link(n4 - n2)
+poss(n5 - n4)
+gen(n7 - n6)
+link(n8 - n2)
+pass(n3 - n2)
+
+go
+
+-- words
+n1, n2 = word(39:75:13)
+n3 = word(39:75:14)
+n4 = N(*)
+n5, n6 = word(39:75:15)
+n7 = word(39:75:16)
+n8 = word(39:75:17)
+
+-- phrases
+n9 = PP(n5 - n6)
+
+-- edges
+pass(n3 - n2)
+gen(n6 - n5)
+app(n7 - n6)
+poss(n8 - n7)
+link(n9 - n4)
+pred(n4 - n3)
+
+go

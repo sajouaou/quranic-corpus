@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useState } from 'react';
 import { NavigationProps } from './navigation';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ChapterService } from '../corpus/orthography/chapter-service';
 import { ChevronDown } from '../components/chevron-down';
 import { Qaf } from './qaf';
@@ -43,7 +43,7 @@ export const NavigationBar = ({ chapterNumber }: NavigationProps) => {
                     popupRef={hamburgerPopupRef}
                     showPopup={showHamburgerPopup}
                     onShowPopup={setShowHamburgerPopup}>
-                    <img src={hamburger} />
+                    <img src={hamburger} alt='Menu' />
                 </PopupLink>
             </header>
             {progress && <IndeterminateProgressBar />}

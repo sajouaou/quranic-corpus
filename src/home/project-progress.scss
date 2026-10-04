@@ -1,0 +1,68 @@
+.project-progress {
+    .bars {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+        gap: 25px 40px;
+    }
+
+    .cell {
+        display: inline-block;
+        border-radius: 3px;
+        background: linear-gradient(
+            to right,
+            rgb(63, 132, 161) var(--verified),
+            #e37010 var(--verified),
+            #e37010 var(--draft),
+            #e6eaee var(--draft));
+    }
+
+    .chapter-coverage {
+        margin-top: 30px;
+
+        h3 {
+            margin: 0 0 10px 0;
+            font-size: 100%;
+        }
+
+        .map {
+            display: grid;
+            grid-template-columns: repeat(19, 1fr);
+            gap: 3px;
+            max-width: 560px;
+
+            .cell {
+                aspect-ratio: 1;
+            }
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 20px;
+            margin-top: 12px;
+            font-size: 90%;
+            color: #575757;
+
+            >span {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .cell {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        .summary {
+            margin: 12px 0 0 0;
+        }
+    }
+
+    .source {
+        margin: 20px 0 0 0;
+        font-size: 90%;
+        color: #575757;
+    }
+}

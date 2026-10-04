@@ -1,12 +1,13 @@
 import { ApiBase } from '../../app/api-base';
 import { ArabicTextService } from '../../arabic/arabic-text-service';
+import { DraftSyntaxService } from './draft-syntax-service';
 import { Graph, SyntaxGraph } from './syntax-graph';
 import { Edge } from './edge';
 import { DependencyTag } from './dependency-tag';
 import { GraphLocation } from './graph-location';
 import { formatLocation } from '../orthography/location';
 import { singleton } from 'tsyringe';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 @singleton()
 export class SyntaxService extends ApiBase {
@@ -59,25 +60,39 @@ export class SyntaxService extends ApiBase {
     private readonly subject = 'اسم';
     private readonly predicate = 'خبر';
 
-    constructor(private readonly arabicTextService: ArabicTextService) {
+    constructor(
+        private readonly arabicTextService: ArabicTextService,
+        private readonly draftSyntaxService: DraftSyntaxService) {
         super();
     }
 
     async getSyntax(graphLocation: GraphLocation) {
-        const response = await axios.get(
-            this.url('/syntax'),
-            {
-                params: {
-                    location: formatLocation(graphLocation.location),
-                    graph: graphLocation.graphNumber
-                }
-            });
-
-        const graph = response.data as Graph;
+        const graph = await this.getGraph(graphLocation);
         const { words, edges } = graph;
         const segmentNodeCount = words.reduce((sum, word) => sum + word.endNode - word.startNode + 1, 0);
         const edgeLabels = edges ? edges.map(edge => this.getEdgeLabel(graph, edge, segmentNodeCount)) : [];
         return new SyntaxGraph(graph, edgeLabels, segmentNodeCount);
+    }
+
+    // Returns the verified graph from the API, or a draft graph where the treebank has none.
+    private async getGraph(graphLocation: GraphLocation): Promise<Graph> {
+        try {
+            const response = await axios.get(
+                this.url('/syntax'),
+                {
+                    params: {
+                        location: formatLocation(graphLocation.location),
+                        graph: graphLocation.graphNumber
+                    }
+                });
+            return this.draftSyntaxService.linkDrafts(graphLocation, response.data as Graph);
+        } catch (e) {
+            if (e instanceof AxiosError && e.response?.status === 404) {
+                const draft = await this.draftSyntaxService.getGraph(graphLocation);
+                if (draft) return draft;
+            }
+            throw e;
+        }
     }
 
     private getEdgeLabel(graph: Graph, edge: Edge, segmentNodeCount: number) {

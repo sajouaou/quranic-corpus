@@ -5,7 +5,6 @@ import { Position, Rect } from '../layout/geometry';
 import { HeightMap } from '../layout/height-map';
 import { Arc, Arrow, GraphLayout, PhraseLayout, WordLayout } from './graph-layout';
 import { SVGDom } from './svg-dom';
-import { theme } from '../theme/theme';
 
 export class SyntaxGraphVisualizer {
     private readonly heightMap = new HeightMap();
@@ -275,7 +274,7 @@ export class SyntaxGraphVisualizer {
         element.y = y;
     }
 
-    private createBox(ref: RefObject<SVGGraphicsElement>): Rect {
+    private createBox(ref: RefObject<SVGGraphicsElement | null>): Rect {
         const element = ref.current;
         const { x = 0, y = 0, width = 0, height = 0 } = element ? element.getBBox() : {};
         return { x, y, width, height };

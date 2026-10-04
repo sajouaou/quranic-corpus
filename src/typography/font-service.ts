@@ -25,7 +25,7 @@ export class FontService {
     }
 
     getFontMetrics(font: Font) {
-        var metrics = this.fontMetrics.get(font.family);
+        const metrics = this.fontMetrics.get(font.family);
         if (!metrics) {
             throw new CorpusError('SERVICE_ERROR', `Failed to get metrics for font ${font}`);
         }

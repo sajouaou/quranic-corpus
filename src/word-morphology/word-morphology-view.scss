@@ -21,6 +21,16 @@
             margin-top: 20px;
         }
 
+        .root {
+            margin-top: 12px;
+
+            .letters {
+                font-family: var(--default-arabic-font-family);
+                font-size: 150%;
+                line-height: 1;
+            }
+        }
+
         .descriptions {
             margin-top: 12px;
 

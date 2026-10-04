@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { LoaderFunctionArgs, useLoaderData, useLocation } from 'react-router-dom';
+import { LoaderFunctionArgs, useLoaderData, useLocation } from 'react-router';
 import { Workspace } from '../app/workspace';
 import { ChapterService } from '../corpus/orthography/chapter-service';
 import { MorphologyService } from '../corpus/morphology/morphology-service';
 import { WordMorphology } from '../corpus/morphology/word-morphology';
 import { Verse } from '../corpus/orthography/verse';
 import { Location, parseHashLocation, parseLocation } from '../corpus/orthography/location';
-import { ReactComponent as Bismillah } from '../images/bismillah.svg';
+import Bismillah from '../images/bismillah.svg?react';
 import { ReaderView } from './reader-view';
 import { DetailView } from './detail-view';
 import { useSettings } from '../settings/settings-context';
@@ -135,7 +135,7 @@ export const WordByWord = () => {
     useEffect(() => {
         if (!scrollTarget) return;
         const { verseNumber } = scrollTarget;
-        let targetElement = verseNumber === 1
+        const targetElement = verseNumber === 1
             ? loadingRefTop.current
             : document.querySelector(`#${getVerseId([chapterNumber, verseNumber])}`);
         if (targetElement) {
@@ -164,20 +164,23 @@ export const WordByWord = () => {
             }
         }, intersectionOptions);
 
-        if (loadingRefTop.current) {
-            observerTop.observe(loadingRefTop.current);
+        const loadingTopElement = loadingRefTop.current;
+        const loadingBottomElement = loadingRefBottom.current;
+
+        if (loadingTopElement) {
+            observerTop.observe(loadingTopElement);
         }
 
-        if (loadingRefBottom.current) {
-            observerBottom.observe(loadingRefBottom.current);
+        if (loadingBottomElement) {
+            observerBottom.observe(loadingBottomElement);
         }
 
         return () => {
-            if (loadingRefTop.current) {
-                observerTop.unobserve(loadingRefTop.current);
+            if (loadingTopElement) {
+                observerTop.unobserve(loadingTopElement);
             }
-            if (loadingRefBottom.current) {
-                observerBottom.unobserve(loadingRefBottom.current);
+            if (loadingBottomElement) {
+                observerBottom.unobserve(loadingBottomElement);
             }
         };
     }, [verses, loadingTop, loadingBottom, startComplete, endComplete, isScrollingUp]);
@@ -187,15 +190,28 @@ export const WordByWord = () => {
             setIsScrollingUp(event.deltaY < 0);
         };
 
+        // A finger moving down the screen scrolls the content up.
+        let lastTouchY: number | undefined;
+
+        const handleTouchStart = (event: TouchEvent) => {
+            lastTouchY = event.touches[0].clientY;
+        };
+
         const handleTouchScroll = (event: TouchEvent) => {
-            setIsScrollingUp(event.touches[0].clientY > event.touches[event.touches.length - 1].clientY);
+            const touchY = event.touches[0].clientY;
+            if (lastTouchY !== undefined && touchY !== lastTouchY) {
+                setIsScrollingUp(touchY > lastTouchY);
+            }
+            lastTouchY = touchY;
         };
 
         window.addEventListener('wheel', handleWheelScroll);
+        window.addEventListener('touchstart', handleTouchStart);
         window.addEventListener('touchmove', handleTouchScroll);
 
         return () => {
             window.removeEventListener('wheel', handleWheelScroll);
+            window.removeEventListener('touchstart', handleTouchStart);
             window.removeEventListener('touchmove', handleTouchScroll);
         };
     }, []);

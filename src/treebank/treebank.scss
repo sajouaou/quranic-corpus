@@ -7,6 +7,16 @@
         margin: 0;
     }
 
+    .draft-notice {
+        margin: 0 0 20px 0;
+        padding: 12px 15px;
+        border: 1px solid #e37010;
+        border-left-width: 5px;
+        border-radius: 8px;
+        background: #fff5e9;
+        line-height: 1.5;
+    }
+
     .navigation {
         display: inline-flex;
         align-items: center;
